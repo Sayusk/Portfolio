@@ -1,16 +1,23 @@
-# React + Vite
+# Web Portfolio (Work in Progress)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website, built to showcase my web development and UI/UX skills as I continue learning.  
 
-Currently, two official plugins are available:
+**Note:** This project is currently under development, the mobile version and Light/Dark mode switch is coming soon.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Desktop layout (mobile support coming soon)
+- Sidebar navigation with icon links
+- Pages: Home, About, Work, Contact
+- Clean, modern UI/UX design
+- Dark/Light mode (coming soon)
 
-## React Compiler
+## Technologies
+- React
+- Vite
+- CSS (custom styling)
+- React Router (for page navigation)
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## About Me
+Hi! I’m Alan, an aspiring Web Developer and UI/UX Designer.  
+I’m passionate about learning, experimenting, and improving my skills.  
+Fluent in English and Portuguese.
