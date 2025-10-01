@@ -2,6 +2,7 @@ body {
   overflow: hidden;
 }
 
+/* Main content (landing page) */
 .main-content {
   margin-left: 60px;
   height: 100vh;
@@ -10,13 +11,6 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.main-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .main-title {
@@ -34,8 +28,7 @@ body {
   margin-top: 0.1px;
 }
 
-
-/* Side Navbar styles */
+/* Side Navbar */
 .side-navbar {
   position: fixed;
   top: 0;
@@ -82,18 +75,17 @@ body {
   border-radius: 16px;
 }
 
-/* Footer styles */
+/* Footer */
 .footer {
   position: fixed;
-  left: calc(50% + 30px); 
-  bottom: 10px;
+  left: calc(50% + 30px);
+  bottom: -40px; /* hidden by default, only a tab showing */
   transform: translateX(-50%);
   background: rgba(148, 148, 148, 0.8);
   color: #fff;
   padding: 0.3rem 1rem;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  z-index: 1100;
   text-align: center;
   font-size: 0.85rem;
   min-width: 200px;
@@ -101,10 +93,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: bottom 0.3s ease;
+  z-index: 1100;
+  cursor: default; /* not clickable */
 }
 
+.footer.expanded {
+  bottom: 0px; 
+}
 
-/* Window component styles */
+/* Window Component */
 .window {
   width: 80%;
   max-width: 900px;
@@ -129,7 +127,6 @@ body {
 .window-close {
   background: transparent;
   border: 2px solid transparent;
-  border-radius: 0;
   padding: 4px;
   cursor: pointer;
   display: flex;
@@ -147,7 +144,7 @@ body {
   padding: 1.5rem;
 }
 
-/* About section */
+/* About Section */
 .about-profile-row {
   display: flex;
   gap: 2rem;
@@ -182,8 +179,7 @@ body {
 }
 
 .about-title {
-  margin-top: 0.2rem;
-  margin-bottom: 0.7rem;
+  margin: 0.2rem 0 0.7rem;
   color: #444;
   font-size: 1rem;
   text-align: left;
@@ -201,11 +197,10 @@ body {
   border-top: 1px solid #3F3F3F; 
 }
 
-/* Contact section*/
-
+/* Contact Section */
 .contact-email-btn {
   margin-top: 0.5rem;
-  background: #000000;
+  background: #000;
   color: #fff;
   padding: 0.7rem 2rem;
   border: none;
@@ -216,7 +211,6 @@ body {
   text-decoration: none;
   transition: background 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(103, 80, 165, 0.08);
-  display: inline-block;
 }
 
 .contact-email-btn:hover {
@@ -235,4 +229,96 @@ body {
   transform: scale(1.12);
   box-shadow: 0 2px 8px rgba(103, 80, 165, 0.15);
   background: #f0f0f0;
+}
+
+/* Work Section */
+.work-content {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tool-box {
+  padding: 0.6rem 1rem;
+  border: 1px solid #3f3f3f;
+  border-radius: 6px;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.tool-box:hover {
+  background: #2b2b2b;
+  transform: scale(1.02);
+  border-color: #6750A5;
+  box-shadow: 0 0 8px rgba(103, 80, 165, 0.5);
+}
+
+.work-hr {
+  border: none;
+  border-top: 1px solid #3F3F3F;
+  margin: 2rem 0;
+}
+
+/* Project Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  position: relative;
+  background: #2a2a2a;
+  border-radius: 8px;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 16px rgba(103, 80, 165, 0.7);
+}
+
+.project-name {
+  z-index: 2;
+  margin: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  opacity: 0;
+  padding: 1rem;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay p {
+  margin-bottom: 0.8rem;
+  color: #fff;
 }
