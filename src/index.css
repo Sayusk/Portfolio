@@ -1,8 +1,11 @@
+/*GLOBAL*/
 body {
   overflow: hidden;
+  margin: 0;
+  font-family: sans-serif;
 }
 
-/* Main content (landing page) */
+/*MAIN CONTENT*/
 .main-content {
   margin-left: 60px;
   height: 100vh;
@@ -19,23 +22,23 @@ body {
 }
 
 .highlight {
-  color: #6750A5;
+  color: #6750a5;
 }
 
 .subtitle {
   font-size: 2rem;
-  color: #3F3F3F;
+  color: #3f3f3f;
   margin-top: 0.1px;
 }
 
-/* Side Navbar */
+/*SIDE NAVBAR*/
 .side-navbar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 60px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   color: #222;
   display: flex;
   flex-direction: column;
@@ -75,17 +78,17 @@ body {
   border-radius: 16px;
 }
 
-/* Footer */
+/*FOOTER*/
 .footer {
   position: fixed;
   left: calc(50% + 30px);
-  bottom: -40px; /* hidden by default, only a tab showing */
+  bottom: -40px;
   transform: translateX(-50%);
   background: rgba(148, 148, 148, 0.8);
   color: #fff;
   padding: 0.3rem 1rem;
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   text-align: center;
   font-size: 0.85rem;
   min-width: 200px;
@@ -95,14 +98,14 @@ body {
   align-items: center;
   transition: bottom 0.3s ease;
   z-index: 1100;
-  cursor: default; /* not clickable */
+  cursor: default;
 }
 
 .footer.expanded {
-  bottom: 0px; 
+  bottom: 0px;
 }
 
-/* Window Component */
+/*WINDOW*/
 .window {
   width: 80%;
   max-width: 900px;
@@ -144,7 +147,7 @@ body {
   padding: 1.5rem;
 }
 
-/* About Section */
+/*ABOUT*/
 .about-profile-row {
   display: flex;
   gap: 2rem;
@@ -197,7 +200,7 @@ body {
   border-top: 1px solid #3F3F3F; 
 }
 
-/* Contact Section */
+/*CONTACT SECTION*/
 .contact-email-btn {
   margin-top: 0.5rem;
   background: #000;
@@ -231,7 +234,7 @@ body {
   background: #f0f0f0;
 }
 
-/* Work Section */
+/*WORK*/
 .work-content {
   max-height: 70vh;
   overflow-y: auto;
@@ -257,17 +260,17 @@ body {
 .tool-box:hover {
   background: #2b2b2b;
   transform: scale(1.02);
-  border-color: #6750A5;
+  border-color: #6750a5;
   box-shadow: 0 0 8px rgba(103, 80, 165, 0.5);
 }
 
 .work-hr {
   border: none;
-  border-top: 1px solid #3F3F3F;
+  border-top: 1px solid #3f3f3f;
   margin: 2rem 0;
 }
 
-/* Project Cards */
+/*PROJECT CARDS*/
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -276,7 +279,7 @@ body {
 
 .project-card {
   position: relative;
-  background: #2a2a2a;
+  border: 3px solid #3f3f3f;
   border-radius: 8px;
   height: 180px;
   display: flex;
@@ -284,34 +287,44 @@ body {
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
   color: inherit;
+  background: #2a2a2a;
 }
 
 .project-card:hover {
   box-shadow: 0 0 16px rgba(103, 80, 165, 0.7);
+  border-color: #6750a5;
+  transform: scale(1.02);
 }
 
-.project-name {
-  z-index: 2;
-  margin: 0.8rem;
-  font-weight: bold;
-  color: #fff;
+.project-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: filter 0.3s ease;
+}
+
+.project-card:hover .project-card-img {
+  filter: brightness(60%);
 }
 
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.6);
   opacity: 0;
   padding: 1rem;
   text-align: center;
   transition: opacity 0.3s ease;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .project-card:hover .project-overlay {
@@ -319,6 +332,38 @@ body {
 }
 
 .project-overlay p {
-  margin-bottom: 0.8rem;
   color: #fff;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.project-name {
+  z-index: 3;
+  margin: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+/*PROJECT PAGE*/
+.project-detail {
+  padding: 1rem;
+  text-align: left;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+}
+
+.project-detail-description {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
 }

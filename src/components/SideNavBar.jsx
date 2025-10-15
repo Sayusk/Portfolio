@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // ⬅️ use Router links instead of <a>
+import { Link } from "react-router-dom"; 
 import userLM from "../assets/userLM.png";
 import folderLM from "../assets/folderLM.png";
 import atLM from "../assets/atLM.png";

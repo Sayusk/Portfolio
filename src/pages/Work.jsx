@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Window from "../components/Window";
+import { projects } from "../data/project";
 
 function Work() {
   const tools = [
@@ -17,34 +19,10 @@ function Work() {
     "Python",
   ];
 
-  const projects = [
-    {
-      name: "Portfolio Website",
-      description: "Portfolio website built with React & Vite.",
-      link: "/work/project1",
-    },
-    {
-      name: "Project2",
-      description: "",
-      link: "/work/project2",
-    },
-    {
-      name: "Project3",
-      description: "",
-      link: "/work/project3",
-    },
-    {
-      name: "Project4",
-      description: "",
-      link: "/work/project4",
-    },
-    // add more projects here later
-  ];
-
   return (
     <Window title="Work">
       <div className="work-content">
-        {/* Tools Section */}
+
         <div className="tools-section">
           <h2>Tools & Technologies</h2>
           <div className="tools-grid">
@@ -58,21 +36,29 @@ function Work() {
 
         <hr className="work-hr" />
 
-        {/* Projects Section */}
         <div className="projects-section">
           <h2>Projects</h2>
           <div className="projects-grid">
-            {projects.map((project, index) => (
-              <a
-                key={index}
-                href={project.link}
-                className="project-card"
+            {projects.map((project) => (
+              <Link
+                key={project.id}
+                to={`/work/${project.id}`}
+                className={`project-card ${!project.image ? "no-image" : ""}`}
               >
-                <p className="project-name">{project.name}</p>
+                {project.image && (
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="project-card-img"
+                  />
+                )}
+
                 <div className="project-overlay">
                   <p>{project.description}</p>
                 </div>
-              </a>
+
+                <p className="project-name">{project.name}</p>
+              </Link>
             ))}
           </div>
         </div>
