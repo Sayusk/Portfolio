@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import SideNavBar from "./components/SideNavBar";
 import Footer from "./components/Footer";
 
@@ -10,7 +10,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
-    <Router basename="/Portfolio/">
+    <Router>
       <SideNavBar />
       <main className="main-content">
         <Routes>
