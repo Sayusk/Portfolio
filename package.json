@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://sayusk.github.io/portfolio",
+  "homepage": "https://Sayusk.github.io/Portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
