@@ -21,27 +21,31 @@ function ProjectDetail() {
 
   return (
     <Window title={project.name}>
+      <div className="work-content project-detail">
 
-      <div className="work-content">
-        
-        <button className="back-btn" onClick={() => navigate("/work")}>
-          <img
-            src={backIcon}
-            alt="Go Back"
-            style={{ width: "30px", height: "30px" }}
-          />
-        </button>
+        {/* Go back button aligned left */}
+        <div className="back-btn-container">
+          <button className="back-btn" onClick={() => navigate("/work")}>
+            <img
+              src={backIcon}
+              alt="Go Back"
+              style={{ width: "30px", height: "30px" }}
+            />
+          </button>
+        </div>
 
-   
+        {/* Project description */}
         <p className="project-detail-description">{project.description}</p>
 
-        
+        {/* Technologies section styled like Work page */}
         <h3>Technologies Used</h3>
-        <ul>
+        <div className="tools-grid">
           {project.technologies.map((tech, index) => (
-            <li key={index}>{tech}</li>
+            <div key={index} className="tool-box">
+              {tech}
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </Window>
   );
