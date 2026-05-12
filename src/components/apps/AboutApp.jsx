@@ -31,31 +31,83 @@ export default function AboutApp() {
         <p>
           Hi! I'm Alan, a Software Developer and UI/UX Designer passionate about creating intuitive, visually appealing web experiences that balance form and function.
         </p>
+
         <p>
-          Currently, I'm building hands-on development experience while serving as the sole IT intern at{' '}
-          <span className="text-zinc-900 dark:text-white font-semibold">Omnia Brasil</span>, where I handle network infrastructure, process automation, and technical training. 
-          I also bring experience from the public sector at{' '}
-          <span className="text-zinc-900 dark:text-white font-semibold">Leme City Hall</span>, supporting critical systems and IT assets.
+          Currently, I work as an{' '}
+          <span className="text-zinc-900 dark:text-white font-semibold">
+            Integration Analyst at Napp Solutions
+          </span>
+          , focusing on system integrations.
+          Alongside my professional role, I actively develop modern web applications as a freelance developer, helping businesses transform ideas into polished digital products.
         </p>
+
         <p>
-          I'm in my third year of a Bachelor's in Information Systems at{' '}
-          <span className="text-zinc-900 dark:text-white font-semibold">FHO (Uniararas)</span>.
-          I speak fluent English and basic Japanese, always looking for opportunities to grow in modern frontend environments.
+          I'm also one of the founders of{' '}
+          <span className="text-zinc-900 dark:text-white font-semibold">
+            Nerva
+          </span>
+          , a web development business dedicated to building performant, user-focused web experiences with strong attention to design and usability.
+        </p>
+
+        <p>
+          Currently in the final year of my Bachelor's degree in{' '}
+          <span className="text-zinc-900 dark:text-white font-semibold">
+            Information Systems at FHO (Uniararas)
+          </span>
+          , I’m constantly exploring new technologies, frontend architectures, and product design approaches.
+          I speak fluent English and basic Japanese, and I’m always looking for opportunities to grow as a developer and designer.
         </p>
       </div>
 
       {/* Highlights */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[
-          { label: 'Education', value: 'B.S. Information Systems', sub: 'FHO · 3rd year' },
-          { label: 'Experience', value: 'IT Intern', sub: 'Omnia Brasil' },
-          { label: 'Languages', value: 'EN / PT / JP', sub: 'Fluent · Native · Basic' },
-          { label: 'Focus', value: 'Frontend & UI/UX', sub: 'React · Framer · Figma' },
+          {
+            label: 'Education',
+            value: 'B.S. Information Systems',
+            sub: 'FHO · Final year'
+          },
+          {
+            label: 'Experience',
+            value: 'Integration Analyst',
+            sub: 'Napp Solutions'
+          },
+          {
+            label: 'Languages',
+            value: 'EN / PT / JP',
+            sub: 'Fluent · Native · Basic'
+          },
+          {
+            label: 'Focus',
+            value: 'Frontend & UI/UX',
+            sub: 'React · Next.js · Figma'
+          },
+          {
+            label: 'Freelance',
+            value: 'Web Developer',
+            sub: 'Modern web projects'
+          },
+          {
+            label: 'Business',
+            value: 'Co-Founder at Nerva',
+            sub: 'Web development studio'
+          },
         ].map(item => (
-          <div key={item.label} className="group rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 p-4 border border-zinc-200 dark:border-zinc-800 transition-all hover:border-purple-500/30 hover:shadow-xl hover:shadow-purple-500/5">
-            <p className="text-[10px] uppercase tracking-widest text-zinc-400 dark:text-zinc-500 font-bold mb-1">{item.label}</p>
-            <p className="text-sm font-bold text-zinc-800 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">{item.value}</p>
-            <p className="text-xs text-zinc-500 dark:text-zinc-500 mt-0.5">{item.sub}</p>
+          <div
+            key={item.label}
+            className="group rounded-2xl bg-zinc-50 dark:bg-zinc-900/50 p-4 border border-zinc-200 dark:border-zinc-800 transition-all hover:border-purple-500/30 hover:shadow-xl hover:shadow-purple-500/5"
+          >
+            <p className="text-[10px] uppercase tracking-widest text-zinc-400 dark:text-zinc-500 font-bold mb-1">
+              {item.label}
+            </p>
+
+            <p className="text-sm font-bold text-zinc-800 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+              {item.value}
+            </p>
+
+            <p className="text-xs text-zinc-500 dark:text-zinc-500 mt-0.5">
+              {item.sub}
+            </p>
           </div>
         ))}
       </div>

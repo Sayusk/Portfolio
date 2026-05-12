@@ -9,26 +9,26 @@ import { useRef, useEffect } from 'react'
 import clickSound from '../../assets/click.wav'
 
 const APP_COMPONENTS = {
-  about:      AboutApp,
-  work:       WorkApp,
-  contact:    ContactApp,
+  about: AboutApp,
+  work: WorkApp,
+  contact: ContactApp,
 }
 
 const APP_LABELS = {
-  about:      'About Me',
-  work:       'Selected Work',
-  contact:    'Get in Touch',
+  about: 'About Me',
+  work: 'Selected Work',
+  contact: 'Get in Touch',
 }
 
 export default function Window({ win }) {
   const { id, zIndex, isMinimized, position, size } = win
-  const focusedId    = useDesktopStore(s => s.focusedId)
-  const isMuted      = useDesktopStore(s => s.isMuted)
-  const closeApp     = useDesktopStore(s => s.closeApp)
-  const minimizeApp  = useDesktopStore(s => s.minimizeApp)
-  const focusApp     = useDesktopStore(s => s.focusApp)
+  const focusedId = useDesktopStore(s => s.focusedId)
+  const isMuted = useDesktopStore(s => s.isMuted)
+  const closeApp = useDesktopStore(s => s.closeApp)
+  const minimizeApp = useDesktopStore(s => s.minimizeApp)
+  const focusApp = useDesktopStore(s => s.focusApp)
   const updateWindow = useDesktopStore(s => s.updateWindow)
-  const audioRef     = useRef(null)
+  const audioRef = useRef(null)
 
   useEffect(() => {
     audioRef.current = new Audio(clickSound)
@@ -39,7 +39,7 @@ export default function Window({ win }) {
     if (isMuted || !audioRef.current) return
     const s = audioRef.current.cloneNode()
     s.volume = 0.2
-    s.play().catch(() => {})
+    s.play().catch(() => { })
   }
 
   const isFocused = focusedId === id
@@ -75,16 +75,16 @@ export default function Window({ win }) {
         exit={{ opacity: 0, scale: 0.98, y: 15 }}
         transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
         className={`w-full h-full flex flex-col rounded-[24px] overflow-hidden transition-all duration-500
-          ${isFocused 
-            ? 'bg-white dark:bg-[#121214] border border-zinc-200 dark:border-white/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)] dark:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)]' 
+          ${isFocused
+            ? 'bg-white dark:bg-[#121214] border border-zinc-200 dark:border-white/10 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.18)] dark:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)]'
             : 'bg-zinc-50/98 dark:bg-[#0c0c0e]/98 border border-zinc-200/60 dark:border-white/5 shadow-md scale-[0.995]'
           }`}
       >
         {/* Header */}
-        <div 
+        <div
           className={`window-drag-handle flex items-center justify-between px-6 py-4 flex-shrink-0 select-none cursor-grab active:cursor-grabbing border-b transition-colors duration-300
-            ${isFocused 
-              ? 'bg-zinc-50/50 dark:bg-white/[0.02] border-zinc-100 dark:border-white/5' 
+            ${isFocused
+              ? 'bg-[#D9D9D9] dark:bg-white/[0.02] border-zinc-100 dark:border-white/5'
               : 'bg-transparent border-transparent'
             }`}
         >
