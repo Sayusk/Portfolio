@@ -1,15 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Portfolio/Y.png" />
+    <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <script type="module" crossorigin src="/Portfolio/assets/index-DC8Rcnq1.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-DX67MBdb.css">
+    <meta name="description" content="Alan Yusuke – Web Developer & UI/UX Designer Portfolio" />
+    <title>Alan Yusuke · Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script>
+      // Prevent theme flash before React hydrates
+      (function(){
+        var t = localStorage.getItem('portfolio-theme') || 'dark';
+        if (t === 'dark') document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+      })()
+    </script>
+    <script type="module" crossorigin src="/Portfolio/assets/index-C4qfe6a2.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-OyMrSlmd.css">
   </head>
-<body>
-  <div id="root"></div>
-</body>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
- 
