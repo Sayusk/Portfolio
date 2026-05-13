@@ -15,102 +15,73 @@ import previewMacalania from "../assets/Macalania/preview.png";
 export const projects = [
   {
     id: "portfolio-website",
-    name: "Portfolio Website",
-    tag: "Web Development", 
-    description:
-      "A personal portfolio website built with React & Vite, showcasing my work in a desktop-inspired UI.",
+    title: "Portfolio Website",
+    tag: "Web Development",
+    description: "A personal portfolio website built with React & Vite, showcasing my work in a desktop-inspired UI.",
     technologies: ["React", "Vite", "HTML", "CSS", "JavaScript", "Figma", "Git"],
     image: previewPortfolio,
-
-    // Creative process
+    featured: true,
+    links: {
+      live: "https://Sayusk.github.io/Portfolio",
+      github: "https://github.com/Sayusk/Portfolio"
+    },
     process: [
-      {
-        caption: "Started by sketching layout ideas in Figma, focusing on a clean desktop-inspired aesthetic.",
-      },      
-      {
-        image: figmaPortfolio1,
-      },
-      {
-        image: figmaPortfolio2,
-      },
-      {
-        caption: "The goal was to replicate a desktop-like environment where each section acts as a window.",
-      },
-      {
-        image: inspoPortfolio1,
-        caption: "I also drew inspiration from Shar’s portfolio (https://www.sharyap.com), whose layout and interactivity resonated with my concept."
-      },
-      {
-        image: inspoPortfolio2,
-        caption: "Last version of the portfolio, featuring mute/unmute button, and a window-style UI.",
-      },
-      {
-        image: homePortfolio,
-      },
-      {
-        image: aboutmePortfolio,
-      },
-      {
-        image: workPortfolio,
-      },
-      {
-        image: projectdetailPortfolio,
-      },
-      {
-        image: contactPortfolio,
-      },
-      {
-        caption: "Coming soon: Light/Dark mode switch.",
-      },
+      { caption: "Started by sketching layout ideas in Figma, focusing on a clean desktop-inspired aesthetic." },
+      { image: figmaPortfolio1 },
+      { image: figmaPortfolio2 },
+      { caption: "The goal was to replicate a desktop-like environment where each section acts as a window." },
+      { image: inspoPortfolio1, caption: "I also drew inspiration from Shar’s portfolio (https://www.sharyap.com), whose layout and interactivity resonated with my concept." },
+      { image: inspoPortfolio2, caption: "Last version of the portfolio, featuring mute/unmute button, and a window-style UI." },
+      { image: homePortfolio },
+      { image: aboutmePortfolio },
+      { image: workPortfolio },
+      { image: projectdetailPortfolio },
+      { image: contactPortfolio },
+      { caption: "Coming soon: Light/Dark mode switch." },
     ],
   },
-
   {
     id: "smart-sun",
-    name: "SmartSun",
+    title: "SmartSun",
     tag: "Web App",
-    description:
-      "A solar irradiation potential calculator web app that estimates energy generation using NASA data. Built with Flask, React, and Supabase.",
+    description: "A solar irradiation potential calculator web app that estimates energy generation using NASA data. Built with Flask, React, and Supabase.",
     technologies: ["React", "Vite", "HTML", "CSS", "JavaScript", "Figma", "Git", "Flask", "Supabase"],
     image: previewSmartsun,
-
-  // Creative process
+    links: {
+      live: "#",
+      github: "#"
+    },
     process: [
-      {
-        caption: "Coming soon...",
-      },      
+      { caption: "Coming soon..." },
     ]
   },
-
   {
     id: "macalania-tattoo",
-    name: "Macalania Tattoo",
+    title: "Macalania Tattoo",
     tag: "Web Development",
     description: "A modern and stylish website developed for Macalania Tattoo Studio, designed to showcase their tattoo and piercing work, contact details, location and a bit of their story.",
     technologies: ["React", "Vite", "HTML", "CSS", "JavaScript", "Figma", "Git"],
     image: previewMacalania,
-
-  // Creative process
+    links: {
+      live: "#",
+      github: "#"
+    },
     process: [
-      {
-        caption: "Coming soon...",
-      },      
+      { caption: "Coming soon..." },
     ]
   },
-   {
+  {
     id: "dra-carol-mansur",
-    name: "Doctor Carol Mansur",
+    title: "Doctor Carol Mansur",
     tag: "UI/UX & Layout Development",
     description: "Created the full website layout and structure for a business site hosted on Hostinger. Focused on responsive design and clean visual hierarchy",
     technologies: ["Figma", "HTML", "CSS"],
-
-  // Creative process
+    links: {
+      live: "#",
+      github: "#"
+    },
     process: [
-      {
-        caption: "Coming soon...",
-      },      
+      { caption: "Coming soon..." },
     ]
-    
   },
-
 ];

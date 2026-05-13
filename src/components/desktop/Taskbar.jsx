@@ -2,12 +2,17 @@ import { motion, AnimatePresence } from 'framer-motion'
 import {
   User, Folder, Mail, Sun, Moon, Volume2, VolumeX
 } from 'lucide-react'
-import NervaLogo from '../../assets/nerva.svg'
 import { useDesktopStore, APPS } from '../../store/useDesktopStore'
 import { useState, useEffect, useRef } from 'react'
 import clickSound from '../../assets/click.wav'
 
 const ICON_MAP = { User, Folder, Mail }
+
+const BASE_URL = import.meta.env.BASE_URL
+const LOGO_PATHS = {
+  dark: `${BASE_URL}assets/nervabranco.svg`,
+  light: `${BASE_URL}assets/nervapreto.svg`
+}
 
 function TaskbarItem({ app, onAction }) {
   const windows = useDesktopStore(s => s.windows)
@@ -100,9 +105,9 @@ export default function Taskbar() {
       <div className="w-12 h-12 flex items-center justify-center mb-6 flex-shrink-0">
         <div className="w-12 h-12 rounded-2xl bg-white/60 dark:bg-zinc-900 border border-black/10 dark:border-white/10 flex items-center justify-center shadow-sm overflow-hidden group">
           <img
-            src={NervaLogo}
+            src={LOGO_PATHS[theme] || LOGO_PATHS.dark}
             alt="Nerva"
-            className="w-8 h-8 object-contain transition-transform group-hover:scale-110 duration-500"
+            className="w-10 h-10 object-contain transition-transform group-hover:scale-110 duration-500"
           />
         </div>
       </div>
