@@ -1,4 +1,5 @@
 import { Mail, ExternalLink } from "lucide-react";
+import { useDesktopStore, TRANSLATIONS } from '../../store/useDesktopStore'
 
 function InstagramIcon({ className = "" }) {
   return (
@@ -21,7 +22,7 @@ function GitHubIcon({ className = "" }) {
       className={className}
       fill="currentColor"
     >
-      <path d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72z" />
+      <path d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 543.1 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72z" />
     </svg>
   );
 }
@@ -44,57 +45,60 @@ const socials = [
     label: "LinkedIn",
     icon: LinkedInIcon,
     href: "https://www.linkedin.com/in/yusukesassano/",
-    color: "text-blue-500",
+    color: "text-blue-600 dark:text-blue-500",
   },
   {
     label: "GitHub",
     icon: GitHubIcon,
     href: "https://github.com/Sayusk/",
-    color: "text-zinc-600 dark:text-zinc-300",
+    color: "text-zinc-800 dark:text-zinc-300",
   },
   {
     label: "Instagram",
     icon: InstagramIcon,
     href: "https://www.instagram.com/sayusk_/",
-    color: "text-pink-500",
+    color: "text-pink-600 dark:text-pink-500",
   },
 ];
 
 export default function ContactApp() {
+  const language = useDesktopStore(s => s.language)
+  const t = TRANSLATIONS[language].contact
+
   return (
     <div className="flex flex-col items-center gap-6 py-2">
       <div className="text-center space-y-1">
-        <h2 className="text-xl font-semibold text-zinc-800 dark:text-zinc-100">
-          Get in touch
+        <h2 className="text-xl font-bold text-zinc-950 dark:text-zinc-100">
+          {t.title}
         </h2>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
-          I'm always open to new opportunities and conversations.
+        <p className="text-sm text-zinc-600 dark:text-zinc-400 font-medium">
+          {t.subtitle}
         </p>
       </div>
 
-      <div className="w-full rounded-xl bg-zinc-100 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/50 p-5 flex flex-col items-center gap-3">
-        <Mail className="w-8 h-8 text-purple-400" />
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
-          Primary email
+      <div className="w-full rounded-xl bg-black/[0.02] dark:bg-zinc-800/60 border border-black/5 dark:border-zinc-700/50 p-5 flex flex-col items-center gap-3 shadow-sm">
+        <Mail className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+        <p className="text-[10px] text-zinc-500 dark:text-zinc-400 font-black uppercase tracking-wider">
+          Email
         </p>
         <a
           href="mailto:alanyusuke@gmail.com"
-          className="font-medium text-purple-400 dark:text-purple-300 hover:underline text-sm"
+          className="font-bold text-purple-600 dark:text-purple-300 hover:underline text-sm"
         >
           alanyusuke@gmail.com
         </a>
 
         <a
           href="mailto:alanyusuke@gmail.com"
-          className="mt-1 flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500 hover:bg-purple-600 text-white text-sm font-medium transition-colors"
+          className="mt-1 flex items-center gap-2 px-6 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold transition-all shadow-lg shadow-purple-600/20 active:scale-95"
         >
-          Send email <ExternalLink className="w-3.5 h-3.5" />
+          {language === 'en' ? 'Send email' : 'Enviar e-mail'} <ExternalLink className="w-3.5 h-3.5" />
         </a>
       </div>
 
       <div className="w-full">
-        <p className="text-xs text-zinc-400 dark:text-zinc-500 text-center mb-3 uppercase tracking-wider">
-          Socials
+        <p className="text-[10px] text-zinc-500 dark:text-zinc-500 text-center mb-3 uppercase tracking-widest font-black">
+          {t.links}
         </p>
 
         <div className="grid grid-cols-3 gap-3">
@@ -104,12 +108,12 @@ export default function ContactApp() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 p-3 rounded-xl bg-zinc-100 dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/50 hover:border-purple-400/50 hover:bg-zinc-200/60 dark:hover:bg-zinc-700/60 transition-all group"
+              className="flex flex-col items-center gap-2 p-3 rounded-xl bg-black/[0.02] dark:bg-zinc-800/60 border border-black/5 dark:border-zinc-700/50 hover:border-purple-500/50 hover:bg-black/5 dark:hover:bg-zinc-700/60 transition-all group shadow-sm"
             >
               <Icon
                 className={`w-6 h-6 ${color} group-hover:scale-110 transition-transform`}
               />
-              <span className="text-xs text-zinc-500 dark:text-zinc-400">
+              <span className="text-[10px] font-black uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
                 {label}
               </span>
             </a>

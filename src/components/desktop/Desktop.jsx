@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useDesktopStore } from '../../store/useDesktopStore'
+import { useDesktopStore, TRANSLATIONS } from '../../store/useDesktopStore'
 import Taskbar from './Taskbar'
 import WindowContainer from '../window/WindowContainer'
 import { useState, useEffect } from 'react'
@@ -12,14 +12,15 @@ function DesktopBackground() {
       <div className="hidden dark:block absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full bg-purple-900/10 blur-[140px]" />
       <div className="hidden dark:block absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-indigo-900/10 blur-[100px]" />
       
-      {/* Light Mode Background */}
-      <div className="block dark:hidden absolute inset-0 bg-[#f3f4f6]" />
-      <div className="block dark:hidden absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-purple-100/50 blur-[120px]" />
-      <div className="block dark:hidden absolute bottom-[-5%] right-[-5%] w-[40%] h-[40%] rounded-full bg-blue-50/50 blur-[100px]" />
+      {/* Light Mode Background - Soft Purple Atmospheric */}
+      <div className="block dark:hidden absolute inset-0 bg-[#f0e9f6]" />
+      <div className="block dark:hidden absolute top-[-15%] left-[-5%] w-[75%] h-[75%] rounded-full bg-white/40 blur-[120px]" />
+      <div className="block dark:hidden absolute bottom-[-5%] right-[-5%] w-[50%] h-[50%] rounded-full bg-purple-200/50 blur-[100px]" />
+      <div className="block dark:hidden absolute top-[20%] right-[10%] w-[30%] h-[30%] rounded-full bg-indigo-100/30 blur-[80px]" />
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.015] dark:opacity-[0.02]" 
-        style={{ backgroundImage: 'radial-gradient(#000 0.5px, transparent 0.5px)', backgroundSize: '32px 32px' }} 
+      {/* Grid Pattern with subtle purple tint */}
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.02]" 
+        style={{ backgroundImage: 'radial-gradient(#6750A5 0.5px, transparent 0.5px)', backgroundSize: '48px 48px' }} 
       />
     </div>
   )
@@ -27,19 +28,21 @@ function DesktopBackground() {
 
 function TopPanel() {
   const [time, setTime] = useState(new Date())
+  const language = useDesktopStore(s => s.language)
+  const locale = language === 'pt' ? 'pt-BR' : 'en-US'
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
 
-  const formattedTime = time.toLocaleTimeString('en-US', { 
+  const formattedTime = time.toLocaleTimeString(locale, { 
     hour: '2-digit', 
     minute: '2-digit', 
     hour12: false 
   })
 
-  const formattedDate = time.toLocaleDateString('en-US', {
+  const formattedDate = time.toLocaleDateString(locale, {
     month: 'short',
     day: 'numeric',
     weekday: 'short'
@@ -47,12 +50,12 @@ function TopPanel() {
 
   return (
     <div className="absolute top-0 left-0 right-0 h-8 flex items-center justify-center px-4 pointer-events-none z-[140]">
-      <div className="flex items-center gap-4 bg-white/5 dark:bg-black/5 backdrop-blur-md px-4 py-1 rounded-full border border-black/5 dark:border-white/5 shadow-sm">
+      <div className="flex items-center gap-4 bg-white/20 dark:bg-black/5 backdrop-blur-xl px-5 py-1.5 rounded-full border border-purple-500/10 dark:border-white/5 shadow-sm">
         <span className="text-[11px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest">
           {formattedDate}
         </span>
-        <div className="w-px h-2 bg-zinc-300 dark:bg-zinc-700" />
-        <span className="text-[11px] font-black text-zinc-800 dark:text-zinc-100 tracking-wider">
+        <div className="w-px h-2.5 bg-black/5 dark:bg-zinc-700" />
+        <span className="text-[11px] font-black text-zinc-900 dark:text-zinc-100 tracking-wider">
           {formattedTime}
         </span>
       </div>
@@ -62,6 +65,8 @@ function TopPanel() {
 
 function HomeScreen() {
   const windows = useDesktopStore(s => s.windows)
+  const language = useDesktopStore(s => s.language)
+  const t = TRANSLATIONS[language]
 
   // Visibility Logic
   const hasVisibleWindows = windows.some(w => !w.isMinimized)
@@ -83,15 +88,15 @@ function HomeScreen() {
             transition={{ delay: 0.2 }}
             className="text-4xl font-bold text-zinc-900 dark:text-white tracking-tight"
           >
-            Hey! I'm <span className="text-purple-600 dark:text-purple-400">Alan</span>
+            {t.desktop.greeting} <span className="text-purple-600 dark:text-purple-400">Alan</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-lg text-zinc-500 dark:text-zinc-400 font-medium"
+            className="text-lg text-zinc-600 dark:text-zinc-400 font-medium"
           >
-            WebDev and Designer
+            {t.desktop.role}
           </motion.p>
         </div>
 
@@ -102,7 +107,7 @@ function HomeScreen() {
           className="pt-8"
         >
           <p className="text-[10px] text-zinc-400 dark:text-zinc-600 uppercase tracking-[0.4em] font-bold">
-            Select an application to start
+            {t.desktop.instruction}
           </p>
         </motion.div>
       </div>
@@ -112,7 +117,7 @@ function HomeScreen() {
 
 export default function Desktop() {
   return (
-    <div className="fixed inset-0 flex overflow-hidden bg-[#f3f4f6] dark:bg-[#080809] transition-colors duration-700" aria-label="Desktop workspace">
+    <div className="fixed inset-0 flex overflow-hidden bg-[#f0e9f6] dark:bg-[#080809] transition-colors duration-700" aria-label="Desktop workspace">
       <DesktopBackground />
 
       <Taskbar />

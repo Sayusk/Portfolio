@@ -4,14 +4,14 @@
   --color-brand: #6750A5;
   --color-brand-light: #7c5fd3;
   
-  /* Palette */
-  --color-bg-light: #f8f9fa;
+  /* Palette - Soft Purple / Lavender Light Mode */
+  --color-bg-light: #f0e9f6; /* Foundations: Lavender Neutral */
   --color-bg-dark: #0a0a0b;
   
-  --color-surface-light: #ffffff;
+  --color-surface-light: #f8f5fb; /* Softer lavender-white surface */
   --color-surface-dark: #121214;
   
-  --color-border-light: #e5e7eb;
+  --color-border-light: rgba(103, 80, 165, 0.12); /* Subtle purple-tinted border */
   --color-border-dark: #1f1f23;
 }
 
@@ -34,7 +34,7 @@ body {
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { 
-  background: rgba(0, 0, 0, 0.1); 
+  background: rgba(103, 80, 165, 0.2); 
   border-radius: 99px; 
 }
 .dark ::-webkit-scrollbar-thumb { 
