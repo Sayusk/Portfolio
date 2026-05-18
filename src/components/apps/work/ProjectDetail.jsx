@@ -1,83 +1,72 @@
 import { ArrowLeft, ExternalLink, Code } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useDesktopStore, TRANSLATIONS } from '../../../store/useDesktopStore'
+import SectionRenderer from './sections/SectionRenderer'
 
 export default function ProjectDetail({ project, onBack }) {
-  const { title, tag, description, technologies, process, links } = project;
+  const { title, category, sections, links } = project
   const language = useDesktopStore(s => s.language)
   const t = TRANSLATIONS[language].workApp
 
+  // Inject primary brand theme color dynamically
+  const containerStyle = {
+    '--project-primary': project.theme?.primary || '#8b5cf6',
+    '--project-bg': project.theme?.background || '#0f0f0f',
+  }
+
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      className="flex flex-col gap-6"
+      exit={{ opacity: 0, y: 15 }}
+      transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+      style={containerStyle}
+      className="flex flex-col gap-10 select-none pb-6"
     >
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-500 hover:text-purple-600 dark:hover:text-purple-400 transition-colors w-fit font-bold group"
-      >
-        <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" /> 
-        {t.back}
-      </button>
+      {/* Navigation Header */}
+      <header className="flex flex-col gap-3">
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-xs text-zinc-500 hover:text-[var(--project-primary)] transition-colors w-fit font-black uppercase tracking-[0.15em] group cursor-pointer"
+        >
+          <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1 text-[var(--project-primary)]" /> 
+          {t.back}
+        </button>
 
-      <div className="space-y-4">
-        <span className="inline-block text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full bg-purple-500/5 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300 border border-purple-500/10 dark:border-purple-500/30 font-black">
-          {tag}
-        </span>
+        {/* Small project category marker */}
+        <div className="flex items-center gap-2 mt-1">
+          <span className="inline-block text-[10px] font-black uppercase tracking-[0.2em] px-2.5 py-1 rounded-full bg-[var(--project-primary)]/10 text-[var(--project-primary)] border border-[var(--project-primary)]/15 transition-theme">
+            {category || 'Case Study'}
+          </span>
+        </div>
+      </header>
 
-        <h2 className="text-3xl font-bold text-zinc-900 dark:text-white tracking-tight">{title}</h2>
-        <p className="text-base text-zinc-700 dark:text-zinc-400 leading-relaxed font-medium">{description}</p>
+      {/* Case Study Storytelling Sections */}
+      <div className="flex flex-col gap-12 w-full">
+        {sections && sections.length > 0 ? (
+          sections.map((section, idx) => (
+            <SectionRenderer 
+              key={`${project.id}-section-${idx}`}
+              section={section}
+              project={project}
+              language={language}
+            />
+          ))
+        ) : (
+          <div className="py-8 text-zinc-400 dark:text-zinc-500 font-bold text-center">
+            No sections available for this case study.
+          </div>
+        )}
       </div>
 
-      {technologies && technologies.length > 0 && (
-        <div className="space-y-3">
-          <h3 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-500 font-black">{t.techStack}</h3>
-          <div className="flex flex-wrap gap-2">
-            {technologies.map(tech => (
-              <span key={tech} className="text-xs px-3 py-1.5 rounded-lg bg-black/5 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-black/5 dark:border-zinc-700 font-bold">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <hr className="border-black/5 dark:border-zinc-800" />
-
-      {process && process.length > 0 && (
-        <div className="space-y-4">
-          <h3 className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-500 font-black">{t.process}</h3>
-          <div className="grid gap-6">
-            {process.map((step, i) => (
-              <div key={i} className="flex flex-col gap-3 group">
-                {step.image && (
-                  <div className="relative overflow-hidden rounded-2xl border border-black/5 dark:border-zinc-700 shadow-sm transition-all hover:shadow-md">
-                    <img
-                      src={step.image}
-                      alt={`Step ${i + 1}`}
-                      className="w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                {step.caption && (
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed italic font-medium">{step.caption}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className="flex flex-wrap gap-4 pt-4">
+      {/* Interactive Links Panel */}
+      <div className="flex flex-wrap gap-4 pt-8 border-t border-black/5 dark:border-white/5 transition-theme mt-4">
         {links?.live && links.live !== "#" && (
           <a 
             href={links.live} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-all shadow-lg shadow-purple-600/20 active:scale-95"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--project-primary)] hover:brightness-110 text-white font-bold transition-all shadow-lg shadow-[var(--project-primary)]/15 hover:shadow-[var(--project-primary)]/30 active:scale-98 cursor-pointer"
           >
             <ExternalLink className="w-4 h-4" /> {t.viewLive}
           </a>
@@ -87,7 +76,7 @@ export default function ProjectDetail({ project, onBack }) {
             href={links.github} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-black/5 dark:bg-zinc-800 hover:bg-black/10 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-bold transition-all border border-black/5 dark:border-zinc-700 active:scale-95 shadow-sm"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-black/5 dark:bg-zinc-800/80 hover:bg-black/10 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-bold transition-all border border-black/5 dark:border-zinc-700/50 active:scale-98 shadow-sm cursor-pointer"
           >
             <Code className="w-4 h-4" /> {t.viewGithub}
           </a>

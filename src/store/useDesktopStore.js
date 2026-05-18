@@ -54,8 +54,8 @@ const TRANSLATIONS = {
       process: 'Development Process',
     },
     contact: {
-      title: 'Get in Touch',
-      subtitle: "I'm currently available for new projects and collaborations. Feel free to reach out!",
+      title: "Let's Talk!",
+      subtitle: "Whether you want to discuss a new creative web project, talk about design psychology, or just swap story-driven RPG recommendations, my inbox is always open. I'm social, easy to talk to, and genuinely love deep conversations.",
       form: {
         name: 'Name',
         email: 'Email',
@@ -63,7 +63,7 @@ const TRANSLATIONS = {
         message: 'Message',
         send: 'Send Message',
         sending: 'Sending...',
-        success: 'Message sent successfully!',
+        success: 'Message sent successfully! Talk to you soon.',
         error: 'Failed to send message. Please try again.',
       },
       links: 'Find me on'
@@ -122,8 +122,8 @@ const TRANSLATIONS = {
       process: 'Processo de Desenvolvimento',
     },
     contact: {
-      title: 'Entre em Contato',
-      subtitle: "Atualmente estou disponível para novos projetos e colaborações. Sinta-se à vontade para entrar em contato!",
+      title: 'Vamos Conversar!',
+      subtitle: "Seja para discutir um novo projeto web criativo, conversar sobre a psicologia do design ou apenas trocar recomendações de RPGs focados em história, minha inbox está sempre aberta. Sou sociável, fácil de conversar e adoro conexões genuínas.",
       form: {
         name: 'Nome',
         email: 'E-mail',
@@ -131,7 +131,7 @@ const TRANSLATIONS = {
         message: 'Mensagem',
         send: 'Enviar Mensagem',
         sending: 'Enviando...',
-        success: 'Mensagem enviada com sucesso!',
+        success: 'Mensagem enviada com sucesso! Falo com você em breve.',
         error: 'Erro ao enviar mensagem. Tente novamente.',
       },
       links: 'Encontre-me em'
