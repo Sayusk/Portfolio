@@ -1,19 +1,26 @@
 import { useDesktopStore } from '../../store/useDesktopStore'
 import { ChevronLeft, Home, Layers } from 'lucide-react'
 
-export default function MobileBottomNav({ onRecentTabsClick }) {
+export default function MobileBottomNav({ onRecentTabsClick, isRecentTabsOpen, onCloseRecentTabs, onRecentTabsToggle }) {
   const focusedId = useDesktopStore(s => s.focusedId)
   const windows = useDesktopStore(s => s.windows)
   const minimizeApp = useDesktopStore(s => s.minimizeApp)
   const closeApp = useDesktopStore(s => s.closeApp)
 
   const handleBack = () => {
+    if (isRecentTabsOpen) {
+      onCloseRecentTabs()
+      return
+    }
     if (focusedId) {
       closeApp(focusedId)
     }
   }
 
   const handleHome = () => {
+    if (isRecentTabsOpen) {
+      onCloseRecentTabs()
+    }
     // Minimize all windows to show the home screen
     windows.forEach(w => minimizeApp(w.id))
   }
@@ -35,7 +42,7 @@ export default function MobileBottomNav({ onRecentTabsClick }) {
       </button>
 
       <button 
-        onClick={onRecentTabsClick}
+        onClick={onRecentTabsToggle || onRecentTabsClick}
         className="p-3 rounded-full active:bg-black/5 dark:active:bg-white/5 transition-colors text-zinc-500 dark:text-zinc-400"
       >
         <Layers size={24} />

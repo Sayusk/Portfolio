@@ -57,10 +57,12 @@ const TRANSLATIONS = {
       process: 'Development Process',
       noSections: 'No sections available for this case study.',
       galleryFallback: 'Designed with close attention to pixel-perfection and modular layout systems, ensuring clean information flows across viewport thresholds.',
+      wipTitle: "Wait! I’m still writing about it.",
+      wipDescription: "I'm currently crafting a detailed write-up for this project. In the meantime, you can explore the live demo or check out the repository on GitHub using the buttons below!",
     },
     contact: {
       title: "Let's Talk!",
-      subtitle: "Whether you want to discuss a new creative web project, talk about design psychology, or just swap story-driven RPG recommendations, my inbox is always open. I'm social, easy to talk to, and genuinely love deep conversations.",
+      subtitle: "Have a project in mind, an opportunity, or just want to connect? Feel free to reach out — I’m always open to discussing design, development, and new ideas.",
       form: {
         name: 'Name',
         email: 'Email',
@@ -131,10 +133,12 @@ const TRANSLATIONS = {
       process: 'Processo de Desenvolvimento',
       noSections: 'Nenhuma seção disponível para este estudo de caso.',
       galleryFallback: 'Projetado com atenção meticulosa à perfeição de pixels e sistemas de layout modular, garantindo fluxos de informação claros através das resoluções de tela.',
+      wipTitle: "Espere! Ainda estou escrevendo sobre isso.",
+      wipDescription: "Estou no processo de escrever um artigo detalhado sobre este projeto. Enquanto isso, você pode explorar a demonstração ao vivo ou conferir o repositório no GitHub usando os botões abaixo!",
     },
     contact: {
       title: 'Vamos Conversar!',
-      subtitle: "Seja para discutir um novo projeto web criativo, conversar sobre a psicologia do design ou apenas trocar recomendações de RPGs focados em história, minha inbox está sempre aberta. Sou sociável, fácil de conversar e adoro conexões genuínas.",
+      subtitle: "Tem um projeto em mente, uma oportunidade ou apenas quer se conectar? Sinta-se à vontade para entrar em contato — estou sempre aberto a discutir design, desenvolvimento e novas ideias.",
       form: {
         name: 'Nome',
         email: 'E-mail',
@@ -164,6 +168,7 @@ export const useDesktopStore = create((set, get) => ({
   windows: [],
   focusedId: null,
   maxZIndex: 10,
+  selectedProjectId: null,
 
   // Theme
   theme: typeof window !== 'undefined'
@@ -226,10 +231,19 @@ export const useDesktopStore = create((set, get) => ({
       }
     }
 
-    set({
-      windows: nextWindows,
-      focusedId: nextFocusedId
-    })
+    // Reset Work app state when closing
+    if (id === 'work') {
+      set({
+        windows: nextWindows,
+        focusedId: nextFocusedId,
+        selectedProjectId: null
+      })
+    } else {
+      set({
+        windows: nextWindows,
+        focusedId: nextFocusedId
+      })
+    }
   },
 
   minimizeApp: (id) => {
@@ -300,5 +314,21 @@ export const useDesktopStore = create((set, get) => ({
   setMuted: (m) => {
     localStorage.setItem('portfolio-muted', m)
     set({ isMuted: m })
+  },
+
+  setSelectedProjectId: (id) => {
+    set({ selectedProjectId: id })
+  },
+
+  closeAllApps: () => {
+    set({
+      windows: [],
+      focusedId: null,
+      selectedProjectId: null
+    })
+  },
+
+  resetWorkState: () => {
+    set({ selectedProjectId: null })
   }
 }))

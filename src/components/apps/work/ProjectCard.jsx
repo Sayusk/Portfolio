@@ -20,12 +20,12 @@ export default function ProjectCard({ project, onClick }) {
       layoutId={`project-${project.id}`}
       onClick={onClick}
       style={cardStyle}
-      className="group relative flex flex-col rounded-2xl overflow-hidden border border-black/5 dark:border-zinc-800 bg-[#fbf9fc] dark:bg-zinc-900/40 hover:border-[var(--project-primary)]/50 transition-all duration-300 text-left shadow-sm hover:shadow-xl hover:shadow-[var(--project-primary)]/[0.04] cursor-pointer"
+      className="group relative flex flex-col h-full rounded-2xl overflow-hidden border border-black/5 dark:border-zinc-800 bg-[#fbf9fc] dark:bg-zinc-900/40 hover:border-[var(--project-primary)]/50 transition-all duration-300 text-left shadow-sm hover:shadow-xl hover:shadow-[var(--project-primary)]/[0.04] cursor-pointer"
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
     >
       {/* Visual Thumbnail Area */}
-      <div className="relative h-44 w-full overflow-hidden bg-black/5 dark:bg-zinc-950 flex-shrink-0">
+      <div className="relative aspect-video w-full overflow-hidden bg-black/5 dark:bg-zinc-950 flex-shrink-0">
         {previewImage ? (
           <img
             src={previewImage}
@@ -38,7 +38,7 @@ export default function ProjectCard({ project, onClick }) {
             <Layout className="w-12 h-12" />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 dark:opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-60 dark:opacity-80 z-20" />
         
         {/* Dynamic Hover Action Indicator */}
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">

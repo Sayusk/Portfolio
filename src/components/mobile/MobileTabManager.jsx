@@ -17,11 +17,16 @@ export default function MobileTabManager() {
   // On mobile, we only display the focused active tab in fullscreen
   const activeWindow = windows.find(w => w.id === focusedId && !w.isMinimized)
 
+  // Ensure we always have a valid rendering state
+  if (!activeWindow) {
+    return null
+  }
+
   return (
     <div className="absolute inset-0 pointer-events-none z-10">
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {activeWindow && (
-          <MobileTab key={activeWindow.id} win={activeWindow} />
+          <MobileTab key={`${activeWindow.id}-${activeWindow.zIndex}`} win={activeWindow} />
         )}
       </AnimatePresence>
     </div>
@@ -31,7 +36,10 @@ export default function MobileTabManager() {
 function MobileTab({ win }) {
   const Component = APP_COMPONENTS[win.id]
   
-  if (!Component) return null
+  // Safety check: ensure component exists
+  if (!Component) {
+    return null
+  }
 
   return (
     <motion.div
@@ -44,7 +52,7 @@ function MobileTab({ win }) {
       <div className="flex-1 overflow-y-auto no-scrollbar">
         {/* Padding bottom is needed so content isn't hidden behind the bottom nav */}
         <div className="p-6 pb-24 min-h-full">
-           <Component />
+          <Component />
         </div>
       </div>
     </motion.div>

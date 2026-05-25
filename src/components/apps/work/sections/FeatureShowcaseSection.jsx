@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Sun, Layers, Volume2, Globe, Monitor } from 'lucide-react'
+import { Sun, Layers, Volume2, Globe, Monitor, Smartphone } from 'lucide-react'
 
 // Live Icon Mapping Dictionary
 const ICON_MAP = {
@@ -7,7 +7,8 @@ const ICON_MAP = {
   window: Layers,
   audio: Volume2,
   language: Globe,
-  responsive: Monitor
+  responsive: Monitor,
+  mobile: Smartphone
 }
 
 export default function FeatureShowcaseSection({ section }) {
@@ -22,7 +23,7 @@ export default function FeatureShowcaseSection({ section }) {
       )}
 
       {/* Premium Minimalist Feature Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 w-full">
         {items.map((item, idx) => {
           const IconComponent = ICON_MAP[item.icon] || Layers
 

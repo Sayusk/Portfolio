@@ -1,14 +1,33 @@
-import previewPortfolio from "../assets/Portfolio/preview.png";
-import figmaPortfolio1 from "../assets/Portfolio/figma1.png";
-import figmaPortfolio2 from "../assets/Portfolio/figma2.png";
-import inspoPortfolio1 from "../assets/Portfolio/inspo1.png";
-import inspoPortfolio2 from "../assets/Portfolio/inspo2.png";
-import homePortfolio from "../assets/Portfolio/Home.png";
-import previewSmartsun from "../assets/Smartsun/preview.png";
-import previewMacalania from "../assets/Macalania/preview.png";
-import appsLMPortfolio from "../assets/Portfolio/AppsLM.png";
-import homeDMPortfolio from "../assets/Portfolio/HomeDM.png";
-import homeLMPortfolio from "../assets/Portfolio/HomeLM.png";
+// ============================================================================
+// PORTFOLIO IMAGES
+// ============================================================================
+import previewPortfolio from "../assets/Portfolio/preview.png"
+import homeDMPortfolio from "../assets/Portfolio/HomeDM.png"
+import homeLMPortfolio from "../assets/Portfolio/HomeLM.png"
+import homePortfolio from "../assets/Portfolio/Home.png"
+import appsLMPortfolio from "../assets/Portfolio/AppsLM.png"
+import figmaPortfolio1 from "../assets/Portfolio/figma1.png"
+import figmaPortfolio2 from "../assets/Portfolio/figma2.png"
+import inspoPortfolio1 from "../assets/Portfolio/inspo1.png"
+import inspoPortfolio2 from "../assets/Portfolio/inspo2.png"
+import mobileHomePortfolio from "../assets/Portfolio/MobileHome.png"
+import mobileTabPortfolio from "../assets/Portfolio/MobileTab.png"
+
+// ============================================================================
+// MACALANIA IMAGES
+// ============================================================================
+import previewMacalania from "../assets/Macalania/preview.png"
+
+// ============================================================================
+// SMARTSUN IMAGES
+// ============================================================================
+import previewSmartsun from "../assets/Smartsun/preview.png"
+
+// ============================================================================
+// ROCKFIT IMAGES
+// ============================================================================
+import previewRockfit from "../assets/RockFit/Home.png"
+import logoRockfit from "../assets/RockFit/Rockfitlogo.jpg"
 
 export const projects = {
   en: [
@@ -16,7 +35,7 @@ export const projects = {
       id: "portfolio-website",
       title: "Portfolio Website",
       category: "Web Development",
-      summary: "A personal digital playroom built with React & Vite, showcasing my work in a cozy, desktop-inspired emulator space.",
+      summary: "A personal digital portfolio built with React & Vite, showcasing my work in a cozy, desktop-inspired emulator space.",
       featured: true,
       stack: ["React 19", "Vite", "Tailwind CSS v4", "Zustand", "Framer Motion", "React Rnd", "HTML5 Audio", "Figma"],
       thumbnail: previewPortfolio,
@@ -34,19 +53,19 @@ export const projects = {
       sections: [
         {
           type: "hero",
-          title: "Building my own digital playroom",
-          description: "An expressive, interactive space designed to run away from standard scrolling templates. Built to behave like a cozy desktop emulator—complete with draggable window controls, dynamic themes, tiny audio click feedbacks, and localized text—crafted to feel like exploring a creative person's workspace rather than reading a static resume.",
+          title: "Building my own digital portfolio",
+          description: "An expressive, interactive space designed to run away from standard scrolling templates. Built to behave like a cozy desktop emulator with draggable window controls, dynamic themes, audio click feedbacks, and localized text.",
           image: homeDMPortfolio,
         },
         {
           type: "text",
           title: "The Idea: Why a Desktop in a Browser?",
-          content: "Most developer portfolios follow a standard vertical layout that can feel a bit passive and corporate. I wanted to create something that felt alive, inviting, and playful.\n\nGrowing up, I spent countless hours playing story-driven RPGs and diving into anime, always fascinated by how games create immersive worlds. That love for storytelling and psychology shaped this project. By turning my portfolio into a desktop emulator—where About Me, Selected Projects, and Contact act as independent, draggable apps—I wanted to create a comfortable sandbox for people to explore, showing my skills in complex React state synchronization while sharing a bit of who I am.",
+          content: "Most developer portfolios follow a standard vertical layout that can feel a bit passive and corporate. I wanted to build something that felt more creative, interactive, and personal.\n\nBy turning my portfolio into a desktop-inspired experience, I aimed to create a space people could genuinely explore instead of simply scroll through, a project that showcases both my technical skills and a bit of my own personality."
         },
         {
           type: "text",
           title: "Atmospheric Inspirations",
-          content: "To build a truly immersive OS experience, I started by researching classic operating systems, desktop simulation games, and premium contemporary portfolios. One of my biggest inspirations was Shar Yap’s desktop portfolio and her video about personal websites. I had already followed her work for a long time because of her animations and motion design; watching her talk about personal websites motivated me to finally build my own.\n\nAnother major inspiration was Ubuntu’s desktop UI and workspace philosophy. I treat these references not as elements to copy literally, but as emotional and design anchor points to create a unique spatial workspace.",
+          content: "To build a true OS experience, I started by researching operating systems and some creative portfolios. One of my biggest inspirations was Shar Yap’s desktop and her video about personal websites. I had already followed her work for a long time because of her animations; watching her talk about personal websites motivated me to finally build my own.\n\nAnother major inspiration was Ubuntu’s desktop UI. I treat these references not as elements to copy literally, but as design anchor points to create a unique workspace.",
         },
         {
           type: "gallery",
@@ -55,24 +74,24 @@ export const projects = {
           images: [
             {
               src: inspoPortfolio1,
-              caption: "Window Navigation Reference",
-              description: "Analyzing dynamic desktop simulators, floating workspaces, and dynamic layering coordinate stacks."
+              caption: "Ubuntu Desktop UI Inspiration",
+              description: "Using Ubuntu’s workspace design, dock behavior, and window management system as inspiration for creating a more desktop-like navigation experience."
             },
             {
               src: inspoPortfolio2,
-              caption: "Dock & System Controls Reference",
-              description: "Studying tactile desktop widgets, dynamic language switches, and system level control layouts."
+              caption: "Interactive Portfolio Inspiration",
+              description: "Studying interactive portfolio experiences that transform personal websites into explorable digital spaces rather than traditional scrolling layouts."
             }
           ]
         },
         {
           type: "text",
           title: "The Journey: The Redesign Turning Point",
-          content: "I actually started this project back in 2025, but the original version was very simple—no draggable windows, no theme switching, no localization, traditional React Router navigation, and bland project pages. Eventually, I stopped working on it because I struggled with implementing theme systems and frontend architecture challenges.\n\nBut as I gained more frontend experience, stronger design knowledge, and better projects to showcase, I revisited the sketches. That redesign became the real turning point, balancing personality, usability, professionalism, and immersion without letting it become too gamified or overly retro.",
+          content: "I actually started this project back in 2025, but the original version was very simple—no draggable windows, no theme switching, no localization, traditional React Router navigation, and bland project pages. Eventually, I stopped working on it because I struggled with implementing theme systems and frontend architecture challenges.\n\nBut as I gained more frontend experience, stronger design knowledge, and better projects to showcase, I revisited the sketches. That redesign became the real turning point, balancing personality, usability, professionalism, and immersion.",
         },
         {
           type: "text",
-          title: "Designing the Moods: Light & Dark Modes",
+          title: "Designing Light & Dark Modes",
           content: "The project has two distinct visual atmospheres. Light Mode features soft lavender tones, a calmer contrast, and a comfortable workspace feeling. Dark Mode, heavily influenced by my favorite color purple, brings deep darker backgrounds and neon-inspired accents for a late-night creative workspace vibe.\n\nVisual systems, type scales, and spacing tokens were rigorously tested in Figma to ensure excellent accessibility, high contrast legibility, and cleaner layouts during iterations.",
         },
         {
@@ -94,8 +113,26 @@ export const projects = {
         },
         {
           type: "text",
-          title: "The Mobile Paradigm: A Phone inside a Screen",
-          content: "A detail I care deeply about is that the desktop and mobile versions feel intentionally different while preserving the same identity. Instead of shrinking the desktop window coordinates to fit a small screen, the mobile experience is designed as its own product: a fully-realized smartphone operating system with app-driven navigation, clean tabs, a persistent Samsung/Android-inspired navigation bar, recent tab switchers, and springy slide-out settings panels.\n\nThe responsive experience is part of the product design itself, not just a technical adaptation.",
+          title: "The Mobile Version",
+          content: "A detail I care about is that the desktop and mobile versions feel intentionally different while preserving the same identity. Instead of shrinking the desktop window coordinates to fit a small screen, the mobile experience is designed as its own product: a fully-realized smartphone operating system with app-driven navigation, clean tabs, a persistent Samsung/Android-inspired navigation bar, recent tab switchers, and springy slide-out settings panels.\n\nThe responsive experience is part of the product design itself, not just a technical adaptation.",
+        },
+        {
+          type: "gallery",
+          layout: "2-columns",
+          aspectRatio: "portrait",
+          title: "Mobile Launcher & System Control Panel",
+          images: [
+            {
+              src: mobileHomePortfolio,
+              caption: "Mobile Home Screen",
+              description: "A custom smartphone home screen featuring dynamic app shortcuts, status bar, and persistent navigation controls."
+            },
+            {
+              src: mobileTabPortfolio,
+              caption: "Quick Settings Drawer",
+              description: "A slide-out system control panel hosting mute controls, system language toggle, and responsive light/dark theme switches."
+            }
+          ]
         },
         {
           type: "gallery",
@@ -142,6 +179,11 @@ export const projects = {
               icon: "responsive",
               title: "Responsive Desktop Layout",
               description: "Gracefully scales active windows and taskbar coordinates to ensure the workspace remains completely touch-friendly and functional on mobile screens."
+            },
+            {
+              icon: "mobile",
+              title: "Mobile OS Architecture",
+              description: "Replaces the desktop interface with a completely custom smartphone experience on smaller viewports, featuring standalone tabs and custom transitions."
             }
           ]
         },
@@ -149,20 +191,6 @@ export const projects = {
           type: "text",
           title: "Technical Implementation & Architecture",
           content: "Behind the cozy graphics lies a highly performant frontend architecture built with React 19, Zustand, and Tailwind CSS v4:\n\n• **Decoupled App Architecture**: Every application window (AboutApp, WorkApp, ContactApp) is written as an isolated React component, completely decoupled from parent layout constraints.\n• **Synchronous State Manager (Zustand)**: Coordinate tracking, active window focus indexes, and desktop boundaries are synchronized síncronamente to avoid expensive prop-drilling or Context render-churn.\n• **Tailwind CSS v4 variables**: Implemented dynamic brand variables (`--project-primary`) that inject custom colors per case study, giving each project its own atmosphere.\n• **Performance Tweaks**: Leveraged Framer Motion's `layoutId` for fluid transitions, pre-cached HTML5 audio nodes, and set up lazy loading for images to keep mobile frame rates at a smooth 60fps.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Learning how to tame complex coordinate calculations inside fluid browser viewports.",
-            "Preventing FOUT (Flash of Unstyled Text) by executing local storage checks before React mounts.",
-            "Designing with empathy—balancing retro playfulness with digital accessibility rules.",
-            "Learning to ruthlessly edit my own designs: removing excess borders to let the content breathe.",
-            "Recreating tactile physical sound systems in a zero-latency digital buffer."
-          ],
-        },
-        {
-          type: "note",
-          content: "Messy sketches on my future roadmap: adding a functional interactive CLI terminal, designing custom retro OS skins, WebGL-powered atmospheric backdrops, and advanced multi-touch gestures.",
         },
       ],
     },
@@ -176,10 +204,10 @@ export const projects = {
       thumbnail: previewSmartsun,
       year: 2024,
       role: "Fullstack Developer",
-      status: "Completed",
+      status: "wip",
       links: {
         live: "#",
-        github: "#"
+        github: "https://github.com/JohnVictorVera/SmartsunFrontend"
       },
       theme: {
         primary: "#f59e0b",
@@ -221,13 +249,13 @@ export const projects = {
       thumbnail: previewMacalania,
       year: 2024,
       role: "Frontend Developer",
-      status: "Completed",
+      status: "wip",
       links: {
         live: "#",
-        github: "#"
+        github: "https://github.com/Sayusk/MacalaniaTattooStudio"
       },
       theme: {
-        primary: "#ec4899",
+        primary: "#3b82f6",
         background: "#09090b",
       },
       sections: [
@@ -257,38 +285,31 @@ export const projects = {
       ],
     },
     {
-      id: "dra-carol-mansur",
-      title: "Doctor Carol Mansur",
-      category: "UI/UX & Layout",
-      summary: "A clean, trust-focused layout created with patient comfort and digital accessibility at its center.",
+      id: "rockfit-brasil-consultoria",
+      title: "RockFit Brasil Consultoria",
+      category: "Web Development",
+      summary: "A bold, high-performance fitness consulting platform built with React, showcasing a strong red-and-black aesthetic and fitness consulting brand identity.",
       featured: false,
-      stack: ["Figma", "HTML", "CSS"],
-      thumbnail: null,
-      year: 2023,
-      role: "UI/UX Designer & Developer",
-      status: "Completed",
+      stack: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Figma"],
+      thumbnail: logoRockfit,
+      year: 2026,
+      role: "Frontend Developer & Designer",
+      status: "wip",
       links: {
         live: "#",
-        github: "#"
+        github: "https://github.com/Sayusk/LandinPageRockFit"
       },
       theme: {
-        primary: "#06b6d4",
-        background: "#080e14",
+        primary: "#ef4444",
+        background: "#0a0a0a",
       },
       sections: [
         {
-          type: "text",
-          title: "Designing for Comfort & Clarity",
-          content: "Medical websites can often feel cold and intimidating. I wanted to design a professional, trust-inspiring experience. By focusing on highly readable serif headers, soft calming blues, and clear, descriptive grid lists, I built a friendly space where patients can find hours, directions, and medical services without friction.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Understanding medical UI rules and digital accessibility regulations.",
-            "Choosing soft, warm typography scales that feel comforting and highly professional.",
-            "Structuring columns for swift, stress-free mobile scheduling navigation."
-          ],
-        },
+          type: "hero",
+          title: "Elevating Fitness Consulting to High Performance",
+          description: "Building a powerful digital presence for RockFit Brasil with a custom, dark, high-contrast user interface, tailored conversion loops, and dynamic motion design.",
+          image: previewRockfit,
+        }
       ],
     },
   ],
@@ -315,19 +336,19 @@ export const projects = {
       sections: [
         {
           type: "hero",
-          title: "Construindo meu próprio espaço digital",
-          description: "Um espaço de engenharia criativa projetado para fugir do padrão de rolagem tradicional. Construído para funcionar como um simulador de desktop aconchegante — completo com janelas arrastáveis, temas dinâmicos, sons táteis de clique e textos localizados — feito para parecer a mesa de trabalho de uma pessoa criativa em vez de um currículo estático.",
+          title: "Construindo meu próprio portfólio digital",
+          description: "Um espaço expressivo e interativo projetado para fugir dos modelos de rolagem padrão. Construído para se comportar como um emulador de desktop aconchegante com janelas arrastáveis, temas dinâmicos, feedbacks de clique por áudio e texto localizado.",
           image: homeDMPortfolio,
         },
         {
           type: "text",
           title: "A Ideia: Por que um Desktop no Navegador?",
-          content: "A maioria dos portfólios de desenvolvedores segue um layout vertical padrão que pode parecer um pouco passivo e corporativo. Eu queria criar algo que parecesse vivo, convidativo e divertido.\n\nCrescendo, passei incontáveis horas jogando RPGs focados em história e assistindo a animes, sempre fascinado por como os jogos criam mundos imersivos. Esse amor por narrativa e psicologia moldou este projeto. Ao transformar meu portfólio em um emulador de desktop — onde o Sobre Mim, Projetos e Contato agem como aplicativos independentes e arrastáveis —, eu quis criar um espaço confortável para as pessoas explorarem, demonstrando minhas habilidades em sincronização complexa de estado com React enquanto compartilho um pouco de quem eu sou.",
+          content: "A maioria dos portfólios de desenvolvedores segue um layout vertical padrão que pode parecer um pouco passivo e corporativo. Eu queria construir algo que parecesse mais criativo, interativo e pessoal.\n\nAo transformar meu portfólio em uma experiência inspirada em desktop, meu objetivo foi criar um espaço que as pessoas pudessem explorar genuinamente em vez de simplesmente rolar a página, um projeto que demonstra tanto minhas habilidades técnicas quanto um pouco da minha própria personalidade."
         },
         {
           type: "text",
-          title: "Direção Creativa: Inspiração Atmosférica",
-          content: "Para construir uma experiência de SO verdadeiramente imersiva, comecei pesquisando sistemas operacionais clássicos, jogos de simulação e portfólios contemporâneos de alto nível. Uma das minhas maiores inspirações para este espaço de trabalho espacial foi o portfólio de Shar Yap e seu vídeo sobre sites pessoais. Eu já acompanhava o trabalho dela há muito tempo por causa de suas animações e motion design; ver ela falar sobre sites pessoais me motivou a finalmente construir o meu próprio.\n\nOutra grande inspiração foi a interface do Ubuntu e sua filosofia de gerenciamento de janelas. Tratei essas referências não como elementos a serem copiados literalmente, mas como pontos de ancoragem conceituais de design e sentimento para moldar um espaço interativo único.",
+          title: "Inspirações Atmosféricas",
+          content: "Para construir uma experiência real de SO, comecei pesquisando sistemas operacionais e alguns portfólios criativos. Uma das minhas maiores inspirações foi a área de trabalho da Shar Yap e seu vídeo sobre sites pessoais. Eu já acompanhava o trabalho dela há muito tempo por causa de suas animações; ver ela falar sobre sites pessoais me motivou a finalmente construir o meu próprio.\n\nOutra grande inspiração foi a interface de usuário do Ubuntu. Trato essas referências não como elementos para copiar literalmente, mas como pontos de ancoragem de design para criar um espaço de trabalho único.",
         },
         {
           type: "gallery",
@@ -336,25 +357,25 @@ export const projects = {
           images: [
             {
               src: inspoPortfolio1,
-              caption: "Referência de Navegação de Janelas",
-              description: "Analisando emuladores de desktop, espaços flutuantes e empilhamentos dinâmicos de camadas de foco."
+              caption: "Inspiração da Interface Ubuntu",
+              description: "Usando o design de espaço de trabalho, comportamento do dock e sistema de gerenciamento de janelas do Ubuntu como inspiração para criar uma experiência de navegação mais parecida com um desktop."
             },
             {
               src: inspoPortfolio2,
-              caption: "Referência de Docks & Controles",
-              description: "Estudando componentes de widgets de desktop, seletores de idioma e layouts de botões de controle."
+              caption: "Inspiração de Portfólio Interativo",
+              description: "Estudando experiências de portfólio interativas que transformam sites pessoais em espaços digitais exploráveis em vez de layouts tradicionais de rolagem vertical."
             }
           ]
         },
         {
           type: "text",
-          title: "A Jornada: A Redescoberta e o Ponto de Virada",
-          content: "Eu realmente comecei este projeto lá em 2025, mas a primeira versão era extremamente simples — sem janelas arrastáveis, sem troca de temas, sem suporte a idiomas, com navegação simples baseada em React Router e páginas de projeto sem graça. Acabei abandonando o desenvolvimento por um tempo, pois enfrentei dificuldades com os sistemas de temas e a arquitetura de estado do frontend.\n\nMais tarde, decidi revisitar os rascunhos com uma bagagem técnica maior, melhor repertório de design e projetos mais maduros para apresentar. Esse redesenho foi o verdadeiro divisor de águas do portfólio, atingindo o equilíbrio ideal entre o lúdico retro e a usabilidade moderna.",
+          title: "A Jornada: O Ponto de Virada no Redesenho",
+          content: "Eu realmente comecei este projeto em 2025, mas a versão original era muito simples — sem janelas arrastáveis, sem troca de temas, sem localização, navegação tradicional com React Router e páginas de projetos sem graça. Eventualmente, parei de trabalhar nele porque tive dificuldades para implementar sistemas de temas e desafios de arquitetura frontend.\n\nMas conforme ganhei mais experiência em frontend, conhecimento de design mais sólido e melhores projetos para exibir, revisitei os rascunhos. Aquele redesenho se tornou o verdadeiro ponto de virada, equilibrando personalidade, usabilidade, profissionalismo e imersão.",
         },
         {
           type: "text",
-          title: "Projetando os Climas: Modo Claro & Escuro",
-          content: "O projeto conta com duas atmosferas visuais completas. O Modo Claro traz tons lavanda suaves, contraste reduzido e um clima de produtividade matinal acolhedor. O Modo Escuro, muito influenciado por roxo (minha cor favorita), traz fundos profundos e realces em neon, simulando o clima de uma noite de desenvolvimento criativo.\n\nFiz vários testes no Figma para calibrar a escala tipográfica e espaçamentos, refinando a acessibilidade de contraste e a limpeza visual a cada iteração.",
+          title: "Projetando os Modos Claro & Escuro",
+          content: "O projeto tem duas atmosferas visuais distintas. O Modo Claro apresenta tons de lavanda suaves, um contraste mais calmo e uma sensação de espaço de trabalho confortável. O Modo Escuro, fortemente influenciado pela minha cor favorita, roxo, traz fundos escuros profundos e detalhes inspirados em neon para uma vibe de espaço de trabalho criativo de fim de noite.\n\nSistemas visuais, escalas tipográficas e espaçamentos foram rigorosamente testados no Figma para garantir excelente acessibilidade, legibilidade de alto contraste e layouts mais limpos durante as iterações.",
         },
         {
           type: "gallery",
@@ -375,8 +396,26 @@ export const projects = {
         },
         {
           type: "text",
-          title: "O Paradigma Mobile: Um Celular de Verdade no Navegador",
-          content: "Um detalhe que cuidei com muito carinho foi fazer com que as versões desktop e mobile fossem intencionalmente diferentes, mas dividissem a mesma identidade de marca. Em vez de simplesmente espremer a mesa de trabalho, a versão mobile é tratada como um produto único: um sistema de smartphone com apps dedicados em abas cheias, barra de navegação Samsung/Android-style persistente, gerenciador de abas recentes em grade e gavetas de controle animadas por molas físicas.\n\nA experiência responsiva aqui é parte do design de produto, não apenas uma adaptação técnica.",
+          title: "A Versão Mobile",
+          content: "Um detalhe que me importa é que as versões desktop e mobile pareçam intencionalmente diferentes, mantendo a mesma identidade. Em vez de espremer as coordenadas das janelas do desktop para caber em uma tela pequena, a experiência mobile é projetada como seu próprio produto: um sistema operacional de smartphone completo, com navegação baseada em aplicativos, abas limpas, uma barra de navegação persistente inspirada em Samsung/Android, seletores de abas recentes e painéis de configurações deslizantes e responsivos.\n\nA experiência responsiva faz parte do próprio design do produto, não é apenas uma adaptação técnica.",
+        },
+        {
+          type: "gallery",
+          layout: "2-columns",
+          aspectRatio: "portrait",
+          title: "Launcher Mobile & Painel de Configurações",
+          images: [
+            {
+              src: mobileHomePortfolio,
+              caption: "Tela Inicial Mobile",
+              description: "Uma tela de smartphone personalizada com atalhos de aplicativos, barra de status customizada e controles de navegação inferiores."
+            },
+            {
+              src: mobileTabPortfolio,
+              caption: "Painel de Configurações Rápidas",
+              description: "Um menu deslizante lateral do sistema que permite silenciar sons, alternar idiomas e trocar o tema visual instantaneamente."
+            }
+          ]
         },
         {
           type: "gallery",
@@ -386,12 +425,12 @@ export const projects = {
             {
               src: homeLMPortfolio,
               caption: "Área de Trabalho Final no Modo Claro",
-              description: "Espaço de trabalho lavanda limpo apresentando cabeçalhos translúcidos e dock de vidro fosco."
+              description: "Espaço de trabalho em tom lavanda suave apresentando cabeçalhos translúcidos e um dock de vidro fosco."
             },
             {
               src: appsLMPortfolio,
               caption: "Janelas Ativas (Modo Claro)",
-              description: "Janelas rodando sob os estilos de modo claro dentro das coordenadas de desktop."
+              description: "Múltiplas janelas do React-rnd rodando de forma fluida dentro dos limites de coordenadas do modo claro."
             }
           ]
         },
@@ -423,6 +462,11 @@ export const projects = {
               icon: "responsive",
               title: "Layout de Desktop Responsivo",
               description: "Redimensiona janelas ativas e docks de forma fluida para que a mesa de trabalho continue divertida e utilizável mesmo em telas compactas de celulares."
+            },
+            {
+              icon: "mobile",
+              title: "Arquitetura de SO Mobile",
+              description: "Substitui a interface de desktop por uma experiência de smartphone totalmente personalizada em telas menores, com abas independentes e transições fluidas."
             }
           ]
         },
@@ -457,10 +501,10 @@ export const projects = {
       thumbnail: previewSmartsun,
       year: 2024,
       role: "Desenvolvedor Fullstack",
-      status: "Concluído",
+      status: "wip",
       links: {
         live: "#",
-        github: "#"
+        github: "https://github.com/JohnVictorVera/SmartsunFrontend"
       },
       theme: {
         primary: "#f59e0b",
@@ -502,13 +546,13 @@ export const projects = {
       thumbnail: previewMacalania,
       year: 2024,
       role: "Desenvolvedor Frontend",
-      status: "Concluído",
+      status: "wip",
       links: {
         live: "#",
-        github: "#"
+        github: "https://github.com/Sayusk/MacalaniaTattooStudio"
       },
       theme: {
-        primary: "#ec4899",
+        primary: "#3b82f6",
         background: "#09090b",
       },
       sections: [
@@ -538,38 +582,31 @@ export const projects = {
       ],
     },
     {
-      id: "dra-carol-mansur",
-      title: "Dra. Carol Mansur",
-      category: "UI/UX & Layout",
-      summary: "Uma estrutura de site institucional centrada na clareza de informações e no conforto dos pacientes.",
+      id: "rockfit-brasil-consultoria",
+      title: "RockFit Brasil Consultoria",
+      category: "Desenvolvimento Web",
+      summary: "Uma plataforma de consultoria fitness de alto impacto e performance construída com React, com uma forte identidade visual em vermelho e preto.",
       featured: false,
-      stack: ["Figma", "HTML", "CSS"],
-      thumbnail: null,
-      year: 2023,
-      role: "Designer UI/UX & Desenvolvedor",
-      status: "Concluído",
+      stack: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Figma"],
+      thumbnail: logoRockfit,
+      year: 2026,
+      role: "Desenvolvedor Frontend & Designer",
+      status: "wip",
       links: {
         live: "#",
-        github: "#"
+        github: "https://github.com/Sayusk/LandinPageRockFit"
       },
       theme: {
-        primary: "#06b6d4",
-        background: "#080e14",
+        primary: "#ef4444",
+        background: "#0a0a0a",
       },
       sections: [
         {
-          type: "text",
-          title: "Projetando para o Acolhimento & Clareza",
-          content: "Websites na área da saúde podem muitas vezes parecer frios ou burocráticos. Meu foco foi desenhar uma experiência acolhedora e que inspire confiança. Utilizando tipografia serifada de alta legibilidade, tons suaves de azul e listas limpas em colunas, criei um portal onde pacientes de diferentes faixas etárias conseguem encontrar horários, tratamentos e direções sem dificuldades.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Compreender regulamentações de acessibilidade digital aplicadas a portais de saúde.",
-            "Desenhar escalas tipográficas suaves que transmitem acolhimento e profissionalismo.",
-            "Estruturar grids intuitivos para que agendamentos via mobile sejam rápidos e livres de estresse."
-          ],
-        },
+          type: "hero",
+          title: "Elevando a Consultoria Fitness à Alta Performance",
+          description: "Construindo uma presença digital robusta para a RockFit Brasil com uma interface customizada em tema escuro de alto contraste, fluxos de conversão otimizados e design dinâmico.",
+          image: previewRockfit,
+        }
       ],
     },
   ],
