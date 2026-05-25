@@ -14,7 +14,10 @@ const TRANSLATIONS = {
       lightMode: 'Light Mode',
       darkMode: 'Dark Mode',
       language: 'English',
-      changeLanguage: 'Change Language',
+      changeLanguage: 'Change language',
+      settings: 'Settings',
+      preview: 'Preview',
+      noRecentTabs: 'No recent tabs',
     },
     desktop: {
       greeting: "Hey! I'm",
@@ -52,6 +55,8 @@ const TRANSLATIONS = {
       viewGithub: 'View Github',
       back: 'Back to projects',
       process: 'Development Process',
+      noSections: 'No sections available for this case study.',
+      galleryFallback: 'Designed with close attention to pixel-perfection and modular layout systems, ensuring clean information flows across viewport thresholds.',
     },
     contact: {
       title: "Let's Talk!",
@@ -66,7 +71,8 @@ const TRANSLATIONS = {
         success: 'Message sent successfully! Talk to you soon.',
         error: 'Failed to send message. Please try again.',
       },
-      links: 'Find me on'
+      links: 'Find me on',
+      sendEmail: 'Send email',
     }
   },
   pt: {
@@ -82,7 +88,10 @@ const TRANSLATIONS = {
       lightMode: 'Modo Claro',
       darkMode: 'Modo Escuro',
       language: 'Português',
-      changeLanguage: 'Mudar Idioma',
+      changeLanguage: 'Trocar idioma',
+      settings: 'Configurações',
+      preview: 'Visualização',
+      noRecentTabs: 'Sem abas recentes',
     },
     desktop: {
       greeting: 'Olá! Eu sou o',
@@ -120,6 +129,8 @@ const TRANSLATIONS = {
       viewGithub: 'Ver Github',
       back: 'Voltar para projetos',
       process: 'Processo de Desenvolvimento',
+      noSections: 'Nenhuma seção disponível para este estudo de caso.',
+      galleryFallback: 'Projetado com atenção meticulosa à perfeição de pixels e sistemas de layout modular, garantindo fluxos de informação claros através das resoluções de tela.',
     },
     contact: {
       title: 'Vamos Conversar!',
@@ -134,7 +145,8 @@ const TRANSLATIONS = {
         success: 'Mensagem enviada com sucesso! Falo com você em breve.',
         error: 'Erro ao enviar mensagem. Tente novamente.',
       },
-      links: 'Encontre-me em'
+      links: 'Encontre-me em',
+      sendEmail: 'Enviar e-mail',
     }
   }
 }

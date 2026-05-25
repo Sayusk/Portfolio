@@ -92,7 +92,7 @@ export default function ContactApp() {
           href="mailto:alanyusuke@gmail.com"
           className="mt-1 flex items-center gap-2 px-6 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold transition-all shadow-lg shadow-purple-600/20 active:scale-95"
         >
-          {language === 'en' ? 'Send email' : 'Enviar e-mail'} <ExternalLink className="w-3.5 h-3.5" />
+          {t.sendEmail} <ExternalLink className="w-3.5 h-3.5" />
         </a>
       </div>
 
@@ -102,6 +102,7 @@ export default function ContactApp() {
         </p>
 
         <div className="grid grid-cols-3 gap-3">
+          {/* eslint-disable-next-line no-unused-vars */}
           {socials.map(({ label, icon: Icon, href, color }) => (
             <a
               key={label}

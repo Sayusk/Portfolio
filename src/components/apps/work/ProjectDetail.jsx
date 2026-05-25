@@ -4,7 +4,7 @@ import { useDesktopStore, TRANSLATIONS } from '../../../store/useDesktopStore'
 import SectionRenderer from './sections/SectionRenderer'
 
 export default function ProjectDetail({ project, onBack }) {
-  const { title, category, sections, links } = project
+  const { category, sections, links } = project
   const language = useDesktopStore(s => s.language)
   const t = TRANSLATIONS[language].workApp
 
@@ -54,7 +54,7 @@ export default function ProjectDetail({ project, onBack }) {
           ))
         ) : (
           <div className="py-8 text-zinc-400 dark:text-zinc-500 font-bold text-center">
-            No sections available for this case study.
+            {t.noSections}
           </div>
         )}
       </div>

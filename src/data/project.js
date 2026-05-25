@@ -4,12 +4,8 @@ import figmaPortfolio2 from "../assets/Portfolio/figma2.png";
 import inspoPortfolio1 from "../assets/Portfolio/inspo1.png";
 import inspoPortfolio2 from "../assets/Portfolio/inspo2.png";
 import homePortfolio from "../assets/Portfolio/Home.png";
-import workPortfolio from "../assets/Portfolio/Work.png";
 import previewSmartsun from "../assets/Smartsun/preview.png";
 import previewMacalania from "../assets/Macalania/preview.png";
-
-// High-fidelity screenshots for the updated case study storytelling
-import appsDMPortfolio from "../assets/Portfolio/AppsDM.png";
 import appsLMPortfolio from "../assets/Portfolio/AppsLM.png";
 import homeDMPortfolio from "../assets/Portfolio/HomeDM.png";
 import homeLMPortfolio from "../assets/Portfolio/HomeLM.png";
@@ -39,7 +35,7 @@ export const projects = {
         {
           type: "hero",
           title: "Building my own digital playroom",
-          description: "A creative engineering space designed to run away from standard scrolling templates. Built to behave like a cozy desktop emulator—complete with draggable window controls, dynamic themes, tiny audio click feedbacks, and localized text—crafted to feel like exploring a creative person's workspace rather than reading a static resume.",
+          description: "An expressive, interactive space designed to run away from standard scrolling templates. Built to behave like a cozy desktop emulator—complete with draggable window controls, dynamic themes, tiny audio click feedbacks, and localized text—crafted to feel like exploring a creative person's workspace rather than reading a static resume.",
           image: homeDMPortfolio,
         },
         {
@@ -49,8 +45,8 @@ export const projects = {
         },
         {
           type: "text",
-          title: "Creative Direction: Atmospheric Inspiration",
-          content: "To build a truly immersive OS experience, I started by researching classic operating systems, desktop simulation games, and premium contemporary portfolios. Rather than copying these references literally, I treated them as emotional and design anchor points.\n\nOne of my biggest inspirations for this spatial workspace was Shar Yap's desktop portfolio ([sharyap.com](https://www.sharyap.com/)), which beautifully demonstrated how retro operating system concepts could be brought into modern web interfaces with pure elegance.\n\nKey inspiration areas included:\n• **Immersive UI & Cozy Simulation**: Studying retro systems to craft tactile dock layouts, floating indicators, and clean window limits.\n• **Tactile Interaction Systems**: Implementing zero-latency audio cues and focus behaviors that make digital folders feel physical.\n• **Atmospheric Storytelling**: Adapting these concepts to construct a highly responsive, cinematic developer portfolio that feels warm, personal, and comfortable to navigate.",
+          title: "Atmospheric Inspirations",
+          content: "To build a truly immersive OS experience, I started by researching classic operating systems, desktop simulation games, and premium contemporary portfolios. One of my biggest inspirations was Shar Yap’s desktop portfolio and her video about personal websites. I had already followed her work for a long time because of her animations and motion design; watching her talk about personal websites motivated me to finally build my own.\n\nAnother major inspiration was Ubuntu’s desktop UI and workspace philosophy. I treat these references not as elements to copy literally, but as emotional and design anchor points to create a unique spatial workspace.",
         },
         {
           type: "gallery",
@@ -71,8 +67,13 @@ export const projects = {
         },
         {
           type: "text",
-          title: "Design Exploration: Designing the Moods",
-          content: "The early exploration phase focused on creating a desktop-inspired interface that still felt modern, clean, and navigable. It was crucial to strike the perfect balance between playful desktop realism and high-end, clean minimalism.\n\nIn Figma, I experimented with visual identity systems, type scales, and spacing tokens. I wanted light and dark modes to represent entirely different atmospheres: a soft, lavender light mode that feels like a quiet, productive morning, and a deep neon-accented dark mode that feels like a late-night creative session.",
+          title: "The Journey: The Redesign Turning Point",
+          content: "I actually started this project back in 2025, but the original version was very simple—no draggable windows, no theme switching, no localization, traditional React Router navigation, and bland project pages. Eventually, I stopped working on it because I struggled with implementing theme systems and frontend architecture challenges.\n\nBut as I gained more frontend experience, stronger design knowledge, and better projects to showcase, I revisited the sketches. That redesign became the real turning point, balancing personality, usability, professionalism, and immersion without letting it become too gamified or overly retro.",
+        },
+        {
+          type: "text",
+          title: "Designing the Moods: Light & Dark Modes",
+          content: "The project has two distinct visual atmospheres. Light Mode features soft lavender tones, a calmer contrast, and a comfortable workspace feeling. Dark Mode, heavily influenced by my favorite color purple, brings deep darker backgrounds and neon-inspired accents for a late-night creative workspace vibe.\n\nVisual systems, type scales, and spacing tokens were rigorously tested in Figma to ensure excellent accessibility, high contrast legibility, and cleaner layouts during iterations.",
         },
         {
           type: "gallery",
@@ -93,30 +94,8 @@ export const projects = {
         },
         {
           type: "text",
-          title: "UI Evolution: Redesigning the Messy Sketches",
-          content: "My initial prototype laid a solid technical foundation, but it was visually cluttered and hard to navigate on mobile. The borders were harsh, windows collided like bumper cars, and the hierarchy felt muddy.\n\nThrough several iterative design cycles, I refined the visual rhythm. I converted rigid inline borders into elegant, soft Tailwind CSS v4 variables, implemented strict coordinate limits to protect mobile viewports, and aggressively cleared out unnecessary visual noise to let the case studies take center stage.",
-        },
-        {
-          type: "gallery",
-          layout: "2-columns",
-          title: "Prototype vs Final Version Comparison",
-          images: [
-            {
-              src: homePortfolio,
-              caption: "Early Design Prototype",
-              description: "Initial baseline desktop environment featuring harsh purple themes and basic positioning coordinates."
-            },
-            {
-              src: homeDMPortfolio,
-              caption: "Final Polished Desktop",
-              description: "Optimized modern dark interface with high-contrast visual grids and atmospheric neon backdrops."
-            }
-          ]
-        },
-        {
-          type: "text",
-          title: "The Finished Space: An Atmospheric Sandbox",
-          content: "The finished website is a responsive desktop simulator that feels clean, editorial, and highly professional. It features dynamic light/dark workspace themes, seamless translations, and tactile mechanical click feedback, designed to feel memorable and deeply human.",
+          title: "The Mobile Paradigm: A Phone inside a Screen",
+          content: "A detail I care deeply about is that the desktop and mobile versions feel intentionally different while preserving the same identity. Instead of shrinking the desktop window coordinates to fit a small screen, the mobile experience is designed as its own product: a fully-realized smartphone operating system with app-driven navigation, clean tabs, a persistent Samsung/Android-inspired navigation bar, recent tab switchers, and springy slide-out settings panels.\n\nThe responsive experience is part of the product design itself, not just a technical adaptation.",
         },
         {
           type: "gallery",
@@ -347,8 +326,8 @@ export const projects = {
         },
         {
           type: "text",
-          title: "Direção Criativa: Inspiração Atmosférica",
-          content: "Para construir uma experiência de SO verdadeiramente imersiva, comecei pesquisando sistemas operacionais clássicos, jogos de simulação e portfólios contemporâneos de alto nível. Em vez de copiar essas referências de forma literal, eu as tratei como pontos de ancoragem conceituais de design e sentimento.\n\nUma das minhas maiores inspirações para este espaço de trabalho espacial foi o portfólio de Shar Yap ([sharyap.com](https://www.sharyap.com/)), que demonstrou brilhantemente como conceitos de sistemas operacionais retrô poderiam ser trazidos para interfaces web modernas com extrema elegância.\n\nAs principais áreas de inspiração incluíram:\n• **UI Imersiva & Simulação Aconchegante**: Estudo de sistemas clássicos para criar docks táteis, indicadores flutuantes e limites limpos de janela.\n• **Sistemas de Interação Tácteis**: Implementação de sons de latência zero e focos de janela que fazem pastas digitais parecerem físicas.\n• **Narrativa Atmosférica**: Adaptação desses conceitos para construir um portfólio moderno que pareça acolhedor, pessoal e confortável de navegar.",
+          title: "Direção Creativa: Inspiração Atmosférica",
+          content: "Para construir uma experiência de SO verdadeiramente imersiva, comecei pesquisando sistemas operacionais clássicos, jogos de simulação e portfólios contemporâneos de alto nível. Uma das minhas maiores inspirações para este espaço de trabalho espacial foi o portfólio de Shar Yap e seu vídeo sobre sites pessoais. Eu já acompanhava o trabalho dela há muito tempo por causa de suas animações e motion design; ver ela falar sobre sites pessoais me motivou a finalmente construir o meu próprio.\n\nOutra grande inspiração foi a interface do Ubuntu e sua filosofia de gerenciamento de janelas. Tratei essas referências não como elementos a serem copiados literalmente, mas como pontos de ancoragem conceituais de design e sentimento para moldar um espaço interativo único.",
         },
         {
           type: "gallery",
@@ -369,8 +348,13 @@ export const projects = {
         },
         {
           type: "text",
-          title: "Exploração de Design: Projetando os Climas",
-          content: "A fase inicial de exploração de design focou na criação de uma interface de desktop que parecesse moderna, limpa e fácil de navegar. Era crucial atingir o equilíbrio ideal entre o realismo do desktop e o minimalismo moderno.\n\nNo Figma, experimentei com sistemas de identidade visual, escalas de tipografia e tokens de espaçamento. Eu queria que os modos claro e escuro representassem atmosferas totalmente diferentes: um modo claro lavanda suave que parece uma manhã calma e produtiva, e um modo escuro com toques neon que parece uma sessão de criação no meio da noite.",
+          title: "A Jornada: A Redescoberta e o Ponto de Virada",
+          content: "Eu realmente comecei este projeto lá em 2025, mas a primeira versão era extremamente simples — sem janelas arrastáveis, sem troca de temas, sem suporte a idiomas, com navegação simples baseada em React Router e páginas de projeto sem graça. Acabei abandonando o desenvolvimento por um tempo, pois enfrentei dificuldades com os sistemas de temas e a arquitetura de estado do frontend.\n\nMais tarde, decidi revisitar os rascunhos com uma bagagem técnica maior, melhor repertório de design e projetos mais maduros para apresentar. Esse redesenho foi o verdadeiro divisor de águas do portfólio, atingindo o equilíbrio ideal entre o lúdico retro e a usabilidade moderna.",
+        },
+        {
+          type: "text",
+          title: "Projetando os Climas: Modo Claro & Escuro",
+          content: "O projeto conta com duas atmosferas visuais completas. O Modo Claro traz tons lavanda suaves, contraste reduzido e um clima de produtividade matinal acolhedor. O Modo Escuro, muito influenciado por roxo (minha cor favorita), traz fundos profundos e realces em neon, simulando o clima de uma noite de desenvolvimento criativo.\n\nFiz vários testes no Figma para calibrar a escala tipográfica e espaçamentos, refinando a acessibilidade de contraste e a limpeza visual a cada iteração.",
         },
         {
           type: "gallery",
@@ -391,30 +375,8 @@ export const projects = {
         },
         {
           type: "text",
-          title: "Evolução da UI: Redesenhando os Rascunhos Confusos",
-          content: "Meu protótipo inicial estabeleceu bases técnicas sólidas, mas era visualmente poluído e difícil de navegar no celular. As bordas eram duras, as janelas colidiam de forma confusa e a hierarquia parecia bagunçada.\n\nPor meio de vários ciclos de design iterativo, refinei o ritmo visual. Converti bordas duras inline em variáveis Tailwind CSS v4 elegantes e suaves, implementei limites de coordenadas para proteger o uso em telas pequenas e limpei agressivamente o ruído visual desnecessário para deixar os estudos de caso brilharem.",
-        },
-        {
-          type: "gallery",
-          layout: "2-columns",
-          title: "Comparação do Protótipo com a Versão Final",
-          images: [
-            {
-              src: homePortfolio,
-              caption: "Protótipo de Design Antigo",
-              description: "Área de trabalho de protótipo inicial com dimensões de janela rígidas e tema roxo cru."
-            },
-            {
-              src: homeDMPortfolio,
-              caption: "Área de Trabalho Polida Final",
-              description: "Interface escura moderna otimizada com grades de alto contraste e iluminação de fundo neon sutil."
-            }
-          ]
-        },
-        {
-          type: "text",
-          title: "O Espaço Concluído: Um Sandbox Atmosférico",
-          content: "O site finalizado é um simulador de desktop responsivo que parece limpo, editorial e altamente profissional. Ele conta com temas claro/escuro dinâmicos, traduções instantâneas e feedbacks de clique mecânico, projetado para ser memorável e profundamente humano.",
+          title: "O Paradigma Mobile: Um Celular de Verdade no Navegador",
+          content: "Um detalhe que cuidei com muito carinho foi fazer com que as versões desktop e mobile fossem intencionalmente diferentes, mas dividissem a mesma identidade de marca. Em vez de simplesmente espremer a mesa de trabalho, a versão mobile é tratada como um produto único: um sistema de smartphone com apps dedicados em abas cheias, barra de navegação Samsung/Android-style persistente, gerenciador de abas recentes em grade e gavetas de controle animadas por molas físicas.\n\nA experiência responsiva aqui é parte do design de produto, não apenas uma adaptação técnica.",
         },
         {
           type: "gallery",
@@ -467,7 +429,7 @@ export const projects = {
         {
           type: "text",
           title: "Arquitetura Frontend & Implementação Técnica",
-          content: "Por trás dos elementos visuais amigáveis existe uma arquitetura de frontend altamente otimizada em React 19, Zustand e Tailwind CSS v4:\n\n• **Arquitetura Desacoplada**: Cada janela de app (Sobre, Trabalhos, Contato) funciona como um componente React isolado, totalmente desacoplado das restrições de layout dos pais.\n• **Gerenciamento de Estado síncrono (Zustand)**: As coordenadas de arrasto, foco e indexação de janelas são controladas em uma única store Zustand síncrona, evitando prop-drilling e renderizações extras.\n• **Variáveis Tailwind CSS v4**: Mapeei variáveis de cores dinâmicas (`--project-primary`) que mudam de acordo com o estudo de caso, conferindo uma atmosfera exclusiva para cada projeto.\n• **Desempenho Otimizado**: Emprega `layoutId` do Framer Motion para transições elegantes, buffers HTML5 Audio para feedback sonoro com latência zero e lazy loading de imagens para manter o framerate em suaves 60fps.",
+          content: "Por trás dos elementos visuais amigáveis existe uma arquitetura de frontend altamente otimizada em React 19, Zustand e Tailwind CSS v4:\n\n• **Arquitetura Desacoplada**: Cada janela de app (Sobre, Trabalhos, Contato) funciona como um componente React isolado, totalmente desacoplado das restrições de layout dos pais.\n• **Gerenciamento de Estado síncrono (Zustand)**: As coordenadas de arrasto, foco e indexação de janelas são controladas em uma única store Zustand síncrona, evitando prop-drilling e renderizações extras.\n• **Variáveis Tailwind CSS v4**: Mapeei variáveis de cores dinâmicas (`--project-primary`) que mudam de acordo com o estudo de caso, conferindo uma atmosfera exclusiva para cada projeto.\n• **Desempenho Otimizado**: Emprega `layoutId` do Framer Motion para transições elegantes, buffers HTML5 Audio para feedback somoro com latência zero e lazy loading de imagens para manter o framerate em suaves 60fps.",
         },
         {
           type: "learnings",

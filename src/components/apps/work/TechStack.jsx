@@ -1,6 +1,6 @@
 import { useDesktopStore, TRANSLATIONS } from '../../../store/useDesktopStore'
 
-export const TOOLS = [
+const TOOLS = [
   'React', 'Vite', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Python', 'Figma', 'Git', 'Adobe Suite', 'CorelDraw', 'Power BI',
 ]
 

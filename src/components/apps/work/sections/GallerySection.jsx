@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Maximize2, X } from 'lucide-react'
+import { useDesktopStore, TRANSLATIONS } from '../../../../store/useDesktopStore'
 
 export default function GallerySection({ section }) {
   const { title, layout = '2-columns', images = [] } = section
   const [activeImage, setActiveImage] = useState(null)
-
-  if (!images || images.length === 0) return null
+  
+  const language = useDesktopStore(s => s.language)
+  const t = TRANSLATIONS[language].workApp
 
   // Helper to parse image item properties (handles both raw string and object item schemas)
   const parseImageItem = (item) => {
@@ -45,6 +47,8 @@ export default function GallerySection({ section }) {
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [activeImage, images])
+
+  if (!images || images.length === 0) return null
 
   const closeLightbox = () => setActiveImage(null)
 
@@ -157,7 +161,7 @@ export default function GallerySection({ section }) {
               ) : (
                 <div className="p-6 rounded-2xl bg-black/5 dark:bg-zinc-900/60 border border-black/5 dark:border-white/5 transition-theme">
                   <p className="text-sm text-zinc-500 dark:text-zinc-400 font-bold leading-relaxed transition-theme">
-                    Designed with close attention to pixel-perfection and modular layout systems, ensuring clean information flows across viewport thresholds.
+                    {t.galleryFallback}
                   </p>
                 </div>
               )}
