@@ -31,7 +31,7 @@ export default function ProjectDetail({ project, onBack }) {
   }
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 15 }}
@@ -65,7 +65,7 @@ export default function ProjectDetail({ project, onBack }) {
           onClick={onBack}
           className="flex items-center gap-2 text-xs text-zinc-500 hover:text-[var(--project-primary)] transition-colors w-fit font-black uppercase tracking-[0.15em] group cursor-pointer"
         >
-          <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1 text-[var(--project-primary)]" /> 
+          <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1 text-[var(--project-primary)]" />
           {t.back}
         </button>
 
@@ -99,25 +99,24 @@ export default function ProjectDetail({ project, onBack }) {
               {/* Title & Description */}
               <div className="space-y-2">
                 <h3 className="text-xl md:text-2xl font-black text-zinc-900 dark:text-white tracking-tight">
-                  {t.wipTitle || "Wait! I’m still writing about it."}
+                  {t.wipTitle || "Wait! I'm still writing about it."}
                 </h3>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 font-bold leading-relaxed">
-                  {t.wipDescription || "I'm currently crafting a detailed write-up for this project. In the meantime, you can explore the live demo or check out the repository on GitHub using the buttons below!"}
+                  {t.wipDescription || "I'm currently writing about this project. In the meantime, you can explore the website using the button below!"}
                 </p>
               </div>
 
-              {/* Polished, slightly playful micro progress bar */}
               <div className="w-32 h-1 bg-black/5 dark:bg-white/5 rounded-full overflow-hidden relative">
-                <motion.div 
+                <motion.div
                   className="absolute inset-y-0 left-0 bg-[var(--project-primary)] rounded-full"
-                  animate={{ 
+                  animate={{
                     left: ["-100%", "100%"],
                     width: ["30%", "60%", "30%"]
                   }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
                   }}
                 />
               </div>
@@ -125,7 +124,7 @@ export default function ProjectDetail({ project, onBack }) {
           </motion.div>
         ) : sections && sections.length > 0 ? (
           sections.map((section, idx) => (
-            <SectionRenderer 
+            <SectionRenderer
               key={`${project.id}-section-${idx}`}
               section={section}
               project={project}
@@ -142,9 +141,9 @@ export default function ProjectDetail({ project, onBack }) {
       {/* Interactive Links Panel */}
       <div className="flex flex-wrap gap-4 pt-8 border-t border-black/5 dark:border-white/5 transition-theme mt-4">
         {links?.live && links.live !== "#" && (
-          <a 
-            href={links.live} 
-            target="_blank" 
+          <a
+            href={links.live}
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--project-primary)] hover:brightness-110 text-white font-bold transition-all shadow-lg shadow-[var(--project-primary)]/15 hover:shadow-[var(--project-primary)]/30 active:scale-98 cursor-pointer"
           >
@@ -152,9 +151,9 @@ export default function ProjectDetail({ project, onBack }) {
           </a>
         )}
         {links?.github && links.github !== "#" && (
-          <a 
-            href={links.github} 
-            target="_blank" 
+          <a
+            href={links.github}
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-xl bg-black/5 dark:bg-zinc-800/80 hover:bg-black/10 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-bold transition-all border border-black/5 dark:border-zinc-700/50 active:scale-98 shadow-sm cursor-pointer"
           >

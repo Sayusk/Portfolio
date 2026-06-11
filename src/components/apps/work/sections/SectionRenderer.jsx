@@ -3,7 +3,6 @@ import TextSection from './TextSection'
 import GallerySection from './GallerySection'
 import InspirationSection from './InspirationSection'
 import NoteSection from './NoteSection'
-import LearningsSection from './LearningsSection'
 import FeatureShowcaseSection from './FeatureShowcaseSection'
 
 // Section Type Presentation Mapping
@@ -13,7 +12,6 @@ const SECTION_COMPONENTS = {
   gallery: GallerySection,
   inspiration: InspirationSection,
   note: NoteSection,
-  learnings: LearningsSection,
   features: FeatureShowcaseSection
 }
 

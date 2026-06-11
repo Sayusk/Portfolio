@@ -29,13 +29,22 @@ import previewSmartsun from "../assets/Smartsun/preview.png"
 import previewRockfit from "../assets/RockFit/Home.png"
 import logoRockfit from "../assets/RockFit/Rockfitlogo.jpg"
 
+// ============================================================================
+// LAR DOCE LAR IMAGES
+// ============================================================================
+import previewLarDoceLar from "../assets/LarDoceLar/previewLarDoceLar.png"
+
+// ============================================================================
+// ENGLISH - EN
+// ============================================================================
+
 export const projects = {
   en: [
     {
       id: "portfolio-website",
       title: "Portfolio Website",
       category: "Web Development",
-      summary: "A personal digital portfolio built with React & Vite, showcasing my work in a cozy, desktop-inspired emulator space.",
+      summary: "A personal digital portfolio built with React & Vite, showcasing my work and design, desktop-inspired emulator space.",
       featured: true,
       stack: ["React 19", "Vite", "Tailwind CSS v4", "Zustand", "Framer Motion", "React Rnd", "HTML5 Audio", "Figma"],
       thumbnail: previewPortfolio,
@@ -48,7 +57,7 @@ export const projects = {
       },
       theme: {
         primary: "#8b5cf6",
-        background: "#0f0f0f",
+        background: "#000000",
       },
       sections: [
         {
@@ -65,7 +74,7 @@ export const projects = {
         {
           type: "text",
           title: "Atmospheric Inspirations",
-          content: "To build a true OS experience, I started by researching operating systems and some creative portfolios. One of my biggest inspirations was Shar Yap’s desktop and her video about personal websites. I had already followed her work for a long time because of her animations; watching her talk about personal websites motivated me to finally build my own.\n\nAnother major inspiration was Ubuntu’s desktop UI. I treat these references not as elements to copy literally, but as design anchor points to create a unique workspace.",
+          content: "To build a true OS experience, I started by researching operating systems and some creative portfolios. One of my biggest inspirations was Shar’s desktop and her video about personal websites. I had already followed her work for a long time because of her animations; watching her talk about personal websites motivated me to finally build my own.\n\nAnother major inspiration was Ubuntu’s desktop UI. I treat these references not as elements to copy, but as design anchor points to create a unique workspace.",
         },
         {
           type: "gallery",
@@ -187,17 +196,12 @@ export const projects = {
             }
           ]
         },
-        {
-          type: "text",
-          title: "Technical Implementation & Architecture",
-          content: "Behind the cozy graphics lies a highly performant frontend architecture built with React 19, Zustand, and Tailwind CSS v4:\n\n• **Decoupled App Architecture**: Every application window (AboutApp, WorkApp, ContactApp) is written as an isolated React component, completely decoupled from parent layout constraints.\n• **Synchronous State Manager (Zustand)**: Coordinate tracking, active window focus indexes, and desktop boundaries are synchronized síncronamente to avoid expensive prop-drilling or Context render-churn.\n• **Tailwind CSS v4 variables**: Implemented dynamic brand variables (`--project-primary`) that inject custom colors per case study, giving each project its own atmosphere.\n• **Performance Tweaks**: Leveraged Framer Motion's `layoutId` for fluid transitions, pre-cached HTML5 audio nodes, and set up lazy loading for images to keep mobile frame rates at a smooth 60fps.",
-        },
       ],
     },
     {
       id: "smart-sun",
       title: "SmartSun",
-      category: "Web App",
+      category: "Web Development",
       summary: "A solar calculator that cuts through NASA's atmospheric databases to make solar potential easy, readable, and human.",
       featured: false,
       stack: ["React", "Vite", "Flask", "Supabase", "Python", "Figma", "Git"],
@@ -225,18 +229,6 @@ export const projects = {
           title: "The Goal: Making Complex Data Approachable",
           content: "Solar energy forecasts are incredibly powerful, but the raw science is often locked behind heavy academic formulas and confusing databases. The idea behind SmartSun was to act as a bridge. By hooking into NASA's atmospheric APIs and mapping them with basic geolocation data, I built an interface that translates massive irradiation data into friendly, simple forecasts of energy savings and monthly generation.",
         },
-        {
-          type: "note",
-          content: "Note: Currently polishing the client-side integration and API keys with Supabase.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Parsing complex atmospheric datasets without slowing down the client interface.",
-            "Designing clean visual charts that explain raw data with empathy and clarity.",
-            "Structuring Supabase security policies to protect user geolocation parameters."
-          ],
-        },
       ],
     },
     {
@@ -261,26 +253,14 @@ export const projects = {
       sections: [
         {
           type: "hero",
-          title: "A Cinematic Studio Catalog",
-          description: "Designed to reflect the studio's dark, premium aesthetic, providing an online catalog and contact portal for prospective clients.",
+          title: "A Tattoo Studio Landing Page",
+          description: "A landing page for a tattoo studio called Macalania Tattoo. Showcasing the studio's works, and providing a way to get in touch with them for an appointment. Telling the studio's story, showing their mission and values.",
           image: previewMacalania,
         },
         {
           type: "text",
-          title: "When Artistry Meets Web Layout",
+          title: "When Ink on Skin Meets the Digital World",
           content: "Tattoo and piercing studios are built on trust, visual identity, and intense artistry. I didn't want to build a generic brochure. The goal was to design a dark, cinematic space where massive, high-contrast imagery takes center stage, and smooth transitions guide users into a simple, comfortable booking flow.",
-        },
-        {
-          type: "note",
-          content: "Note: Designed fully in Figma from scratch to map out the visual atmosphere before touching code.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Optimizing large image assets for instant mobile load times while keeping high quality.",
-            "Creating custom CSS grid layouts that behave like modular physical art galleries.",
-            "Balancing moody, deep dark-mode contrasts with high legibility standards."
-          ],
         },
       ],
     },
@@ -288,7 +268,7 @@ export const projects = {
       id: "rockfit-brasil-consultoria",
       title: "RockFit Brasil Consultoria",
       category: "Web Development",
-      summary: "A bold, high-performance fitness consulting platform built with React, showcasing a strong red-and-black aesthetic and fitness consulting brand identity.",
+      summary: "A landing page with built-in checkout for a fitness consulting company called RockFit Brasil. It has a checkout page and payment management.",
       featured: false,
       stack: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Figma"],
       thumbnail: logoRockfit,
@@ -301,24 +281,56 @@ export const projects = {
       },
       theme: {
         primary: "#ef4444",
-        background: "#0a0a0a",
+        background: "#000000",
       },
       sections: [
         {
           type: "hero",
           title: "Elevating Fitness Consulting to High Performance",
-          description: "Building a powerful digital presence for RockFit Brasil with a custom, dark, high-contrast user interface, tailored conversion loops, and dynamic motion design.",
+          description: "Building a digital presence for RockFit Brasil with a intuitive user interface and optimized conversion funnels.",
           image: previewRockfit,
         }
       ],
     },
+    {
+      id: "lar-doce-lar",
+      title: "Lar Doce Lar",
+      category: "Ui/Ux Designer",
+      summary: "A platform for courses and community for Christian women who want to grow in their faith, marriage, and motherhood.",
+      featured: false,
+      stack: ["React", "Vite", "Typescript", "Tailwind CSS", "Figma"],
+      thumbnail: previewLarDoceLar,
+      year: 2026,
+      role: "Frontend Developer & Designer",
+      status: "wip",
+      links: {
+        live: "https://lardocelar.app"
+      },
+      theme: {
+        primary: "#eb7da7",
+        background: "#000000",
+      },
+      sections: [
+        {
+          type: "hero",
+          title: "Lar Doce Lar",
+          description: "A platform for courses and community for Christian women who want to grow in their faith, marriage, and motherhood.",
+          image: previewLarDoceLar,
+        },
+      ],
+    },
   ],
+
+  // ============================================================================
+  // Portuguese - PT
+  // ============================================================================
+
   pt: [
     {
       id: "portfolio-website",
       title: "Site Portfólio",
       category: "Desenvolvimento Web",
-      summary: "Um espaço de trabalho pessoal e aconchegante construído com React & Vite, funcionando como um simulador de desktop interativo.",
+      summary: "Um espaço de trabalho pessoal e aconchegante construído com React & Vite, apresentando meus designs e projetos.",
       featured: true,
       stack: ["React 19", "Vite", "Tailwind CSS v4", "Zustand", "Framer Motion", "React Rnd", "HTML5 Audio", "Figma"],
       thumbnail: previewPortfolio,
@@ -331,7 +343,7 @@ export const projects = {
       },
       theme: {
         primary: "#8b5cf6",
-        background: "#0f0f0f",
+        background: "#000000",
       },
       sections: [
         {
@@ -348,7 +360,7 @@ export const projects = {
         {
           type: "text",
           title: "Inspirações Atmosféricas",
-          content: "Para construir uma experiência real de SO, comecei pesquisando sistemas operacionais e alguns portfólios criativos. Uma das minhas maiores inspirações foi a área de trabalho da Shar Yap e seu vídeo sobre sites pessoais. Eu já acompanhava o trabalho dela há muito tempo por causa de suas animações; ver ela falar sobre sites pessoais me motivou a finalmente construir o meu próprio.\n\nOutra grande inspiração foi a interface de usuário do Ubuntu. Trato essas referências não como elementos para copiar literalmente, mas como pontos de ancoragem de design para criar um espaço de trabalho único.",
+          content: "Para construir uma experiência real de SO, comecei pesquisando sistemas operacionais e alguns portfólios criativos. Uma das maiores inspirações foi o site da Shar e seu vídeo sobre sites pessoais. Eu já acompanhava o trabalho dela há muito tempo por causa de suas animações; ver ela falar sobre sites pessoais me motivou a finalmente construir o meu próprio.\n\nOutra grande inspiração foi a interface do Ubuntu. Trato essas referências não como elementos para copiar, mas como pontos de inspiração para criar um portfólio único.",
         },
         {
           type: "gallery",
@@ -470,32 +482,13 @@ export const projects = {
             }
           ]
         },
-        {
-          type: "text",
-          title: "Arquitetura Frontend & Implementação Técnica",
-          content: "Por trás dos elementos visuais amigáveis existe uma arquitetura de frontend altamente otimizada em React 19, Zustand e Tailwind CSS v4:\n\n• **Arquitetura Desacoplada**: Cada janela de app (Sobre, Trabalhos, Contato) funciona como um componente React isolado, totalmente desacoplado das restrições de layout dos pais.\n• **Gerenciamento de Estado síncrono (Zustand)**: As coordenadas de arrasto, foco e indexação de janelas são controladas em uma única store Zustand síncrona, evitando prop-drilling e renderizações extras.\n• **Variáveis Tailwind CSS v4**: Mapeei variáveis de cores dinâmicas (`--project-primary`) que mudam de acordo com o estudo de caso, conferindo uma atmosfera exclusiva para cada projeto.\n• **Desempenho Otimizado**: Emprega `layoutId` do Framer Motion para transições elegantes, buffers HTML5 Audio para feedback somoro com latência zero e lazy loading de imagens para manter o framerate em suaves 60fps.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Aprender a conter cálculos de coordenadas complexas em viewports flexíveis no navegador.",
-            "Prevenir FOUT (Flash of Unstyled Text) rodando verificações no LocalStorage antes do React montar os componentes.",
-            "Projetar com empatia — equilibrando o lúdico retro com regras de acessibilidade e grids responsivos.",
-            "Aprender a editar com rigor meus próprios designs, removendo linhas de contorno excessivas para dar respiro ao conteúdo.",
-            "Reconstruir respostas sonoras táteis digitais em um buffer de latência zero."
-          ],
-        },
-        {
-          type: "note",
-          content: "Rascunhos de melhorias futuras: terminal interativo integrado, novos temas visuais inspirados em SOs antigos, gestos avançados de arrasto para mobile e fundos atmosféricos usando WebGL.",
-        },
       ],
     },
     {
       id: "smart-sun",
       title: "SmartSun",
-      category: "Web App",
-      summary: "Uma calculadora solar que traduz os bancos de dados complexos da NASA em estimativas verdes simples e fáceis de ler.",
+      category: "Desenvolvimento Web",
+      summary: "Uma calculadora solar que calcula o potencial solar usando a API de irradiação solar da NASA",
       featured: false,
       stack: ["React", "Vite", "Flask", "Supabase", "Python", "Figma", "Git"],
       thumbnail: previewSmartsun,
@@ -508,7 +501,7 @@ export const projects = {
       },
       theme: {
         primary: "#f59e0b",
-        background: "#0c0a09",
+        background: "#000000",
       },
       sections: [
         {
@@ -522,25 +515,13 @@ export const projects = {
           title: "O Objetivo: Tornar Dados Complexos Acolhedores",
           content: "As estimativas solares são extremamente importantes para o futuro sustentável, mas os bancos de dados científicos costumam ser complexos e intimidantes para o usuário comum. O SmartSun nasceu para funcionar como uma ponte. Integrando-me às APIs de irradiação solar da NASA e cruzando-as com geolocalização simples, criei um painel limpo que traduz dados complexos em previsões amigáveis de economia e geração de energia.",
         },
-        {
-          type: "note",
-          content: "Nota: A integração com Supabase e chaves de API do backend estão passando por otimizações de segurança.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Filtrar dados de irradiação solar complexos no lado do cliente sem comprometer a fluidez.",
-            "Projetar gráficos limpos que explicam economias financeiras de forma clara e visual.",
-            "Configurar políticas de segurança RLS no Supabase para proteger dados de localização dos usuários."
-          ],
-        },
       ],
     },
     {
       id: "macalania-tattoo",
       title: "Macalania Tattoo",
       category: "Desenvolvimento Web",
-      summary: "Um catálogo digital cinematográfico e minimalista projetado para destacar artes de tatuagem e fluxos de contato.",
+      summary: "Uma landing page projetada para o estúdio de tatuagem Macalania Tattoo. Mostra as artes do estúdio, e fornece uma forma de entrar em contato com eles para um agendamento. Contando a história do estúdio, mostrando seus valores e sua filosofia.",
       featured: false,
       stack: ["React", "Vite", "JavaScript", "HTML", "CSS", "Figma", "Git"],
       thumbnail: previewMacalania,
@@ -553,31 +534,19 @@ export const projects = {
       },
       theme: {
         primary: "#3b82f6",
-        background: "#09090b",
+        background: "#000000",
       },
       sections: [
         {
           type: "hero",
-          title: "Um Catálogo de Estúdio Cinemático",
-          description: "Projetado para refletir a estética escura e premium do estúdio, fornecendo um catálogo online e portal de contato para potenciais clientes.",
+          title: "Uma Landing Page Para o Macalania Tattoo Studio",
+          description: "Uma landing page projetada para o estúdio de tatuagem Macalania Tattoo. Mostra as artes do estúdio, e fornece uma forma de entrar em contato com eles para um agendamento. Contando a história do estúdio, mostrando seus valores e sua filosofia.",
           image: previewMacalania,
         },
         {
           type: "text",
-          title: "Quando o Artesanato Encontra o Layout Web",
+          title: "Quando a Arte na Pele Encontra o Mundo Digital",
           content: "Estúdios de tatuagem e piercing dependem de identidade, confiança e forte impacto visual. Eu não queria construir apenas mais um folheto institucional. O objetivo foi criar uma galeria escura e cinematográfica onde imagens em grande formato e transições fluidas guiam o cliente até um agendamento rápido e confortável.",
-        },
-        {
-          type: "note",
-          content: "Nota: Desenhado inteiramente do zero no Figma para definir a atmosfera e o contraste visual antes do código.",
-        },
-        {
-          type: "learnings",
-          items: [
-            "Otimizar ativos de imagem em alta definição para carregamento instantâneo no mobile.",
-            "Projetar grades CSS customizadas que se comportam como exposições físicas de quadros.",
-            "Equilibrar os contrastes escuros do tema sem prejudicar as regras de legibilidade."
-          ],
         },
       ],
     },
@@ -585,7 +554,7 @@ export const projects = {
       id: "rockfit-brasil-consultoria",
       title: "RockFit Brasil Consultoria",
       category: "Desenvolvimento Web",
-      summary: "Uma plataforma de consultoria fitness de alto impacto e performance construída com React, com uma forte identidade visual em vermelho e preto.",
+      summary: "Uma landing page para uma empresa de consultoria fitness chamada RockFit Brasil. Possui checkout embutido para pagamento facilitado.",
       featured: false,
       stack: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Figma"],
       thumbnail: logoRockfit,
@@ -598,15 +567,42 @@ export const projects = {
       },
       theme: {
         primary: "#ef4444",
-        background: "#0a0a0a",
+        background: "#000000",
       },
       sections: [
         {
           type: "hero",
           title: "Elevando a Consultoria Fitness à Alta Performance",
-          description: "Construindo uma presença digital robusta para a RockFit Brasil com uma interface customizada em tema escuro de alto contraste, fluxos de conversão otimizados e design dinâmico.",
+          description: "Construindo uma presença digital para a RockFit Brasil com uma interface intuitiva, checkout embutido e design dinâmico.",
           image: previewRockfit,
         }
+      ],
+    },
+    {
+      id: "lar-doce-lar",
+      title: "Lar Doce Lar",
+      category: "Ui/Ux Design",
+      summary: "Uma plataforma de cursos e comunidade para mulheres cristãs que desejam crescer na fé, no matrimônio e na maternidade.",
+      featured: false,
+      stack: ["React", "Vite", "Tailwind CSS", "Figma"],
+      thumbnail: previewLarDoceLar,
+      year: 2026,
+      role: "Designer Ui/Ux & Desenvolvedor Frontend",
+      status: "wip",
+      links: {
+        live: "https://lardocelar.app"
+      },
+      theme: {
+        primary: "#eb7da7",
+        background: "#000000",
+      },
+      sections: [
+        {
+          type: "hero",
+          title: "Lar Doce Lar",
+          description: "Uma plataforma de cursos e comunidade para mulheres cristãs que desejam crescer na fé, no matrimônio e na maternidade.",
+          image: previewLarDoceLar,
+        },
       ],
     },
   ],

@@ -5,7 +5,8 @@ import {
 import { useDesktopStore, APPS, TRANSLATIONS } from '../../store/useDesktopStore'
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
-import clickSound from '../../assets/click.wav'
+import clickSound from '../../assets/click.mp3'
+import owlSound from '../../assets/owl.mp3'
 
 const ICON_MAP = { User, Folder, Mail }
 
@@ -50,7 +51,7 @@ function Tooltip({ label, hovered, coords }) {
 function TaskbarItem({ app, onAction }) {
   const language = useDesktopStore(s => s.language)
   const t = TRANSLATIONS[language]
-  
+
   const windows = useDesktopStore(s => s.windows)
   const focusedId = useDesktopStore(s => s.focusedId)
   const toggleApp = useDesktopStore(s => s.toggleApp)
@@ -176,7 +177,7 @@ export default function Taskbar() {
   const language = useDesktopStore(s => s.language)
   const setLanguage = useDesktopStore(s => s.setLanguage)
   const t = TRANSLATIONS[language]
-  
+
   const isMuted = useDesktopStore(s => s.isMuted)
   const setMuted = useDesktopStore(s => s.setMuted)
   const audioRef = useRef(null)
@@ -193,6 +194,29 @@ export default function Taskbar() {
     s.play().catch(() => { })
   }
 
+  const playOwlSound = () => {
+    if (isMuted) return
+    const audio = new Audio(owlSound)
+    audio.volume = 0.5
+    audio.play().catch(() => { })
+  }
+
+  // Muted balloon state for the logo easter egg
+  const owlRef = useRef(null)
+  const [owlHovered, setOwlHovered] = useState(false)
+  const [owlCoords, setOwlCoords] = useState({ top: 0, left: 0 })
+
+  const handleOwlHoverStart = () => {
+    if (!isMuted) return
+    if (owlRef.current) {
+      const rect = owlRef.current.getBoundingClientRect()
+      setOwlCoords({ top: rect.top + rect.height / 2 - 16, left: rect.right + 20 })
+    }
+    setOwlHovered(true)
+  }
+
+  const handleOwlHoverEnd = () => setOwlHovered(false)
+
   const toggleLanguage = () => {
     playActionSound()
     setLanguage(language === 'en' ? 'pt' : 'en')
@@ -205,9 +229,15 @@ export default function Taskbar() {
         border-r border-black/5 dark:border-white/5 transition-all duration-500"
       style={{ width: 72 }}
     >
-      {/* Brand */}
       <div className="w-12 h-12 flex items-center justify-center mb-6 flex-shrink-0">
-        <div className="w-12 h-12 rounded-2xl bg-white/60 dark:bg-zinc-900 border border-black/5 dark:border-white/10 flex items-center justify-center shadow-sm overflow-hidden group">
+        <Tooltip label="Whoo whoo" hovered={owlHovered && isMuted} coords={owlCoords} />
+        <div
+          ref={owlRef}
+          onClick={playOwlSound}
+          onMouseEnter={handleOwlHoverStart}
+          onMouseLeave={handleOwlHoverEnd}
+          className="w-12 h-12 rounded-2xl bg-white/60 dark:bg-zinc-900 border border-black/5 dark:border-white/10 flex items-center justify-center shadow-sm overflow-hidden group cursor-pointer select-none"
+        >
           <img
             src={LOGO_PATHS[theme] || LOGO_PATHS.dark}
             alt="Nerva"

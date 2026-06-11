@@ -4,8 +4,7 @@ const TRANSLATIONS = {
   en: {
     apps: {
       about: 'About Me',
-      work: 'Work',
-      projects: 'Projects',
+      work: 'Projects',
       contact: 'Contact',
     },
     controls: {
@@ -34,9 +33,9 @@ const TRANSLATIONS = {
       tags: ['Leme, SP - Brazil', 'EN & PT & JP'],
       bio: [
         "Hi! I'm Alan, a Software Developer and UI/UX Designer passionate about creating intuitive, visually appealing web experiences that balance form and function.",
-        "Currently, I work as an Integration Analyst at Napp Solutions, focusing on system integrations. Alongside my professional role, I actively develop modern web applications as a freelance developer, helping businesses transform ideas into polished digital products.",
-        "I'm also one of the founders of Nerva, a web development business dedicated to building performant, user-focused web experiences with strong attention to design and usability.",
-        "Currently in the final year of my Bachelor's degree in Information Systems at FHO (Uniararas), I’m constantly exploring new technologies, frontend architectures, and product design approaches. I speak fluent English and basic Japanese, and I’m always looking for opportunities to grow as a developer and designer."
+        "Currently, I work as an Integration Analyst at Napp Solutions, focusing on system integrations. Throughout my journey, I've had the opportunity to work in different environments, including education, IT within a multinational company, and the public sector in my city. Outside of my full-time work, I also develop web applications as a freelance developer.",
+        "My journey has been shaped by a unique blend of experiences. When I was 14, I had the opportunity to live in Vancouver, Canada, for a period of time, an experience that broadened my perspective and helped me become fluent in English. Having family members in Japan also sparked my interest in the language and culture, inspiring me to study Japanese on my own.",
+        "I'm currently in the final year of my bachelor's degree in Information Systems at FHO (Uniararas). I'm always looking for opportunities to learn, improve, and create products and experiences that people genuinely enjoy using."
       ],
       highlights: [
         { label: 'Education', value: 'B.S. Information Systems', sub: 'FHO · Final year' },
@@ -44,7 +43,6 @@ const TRANSLATIONS = {
         { label: 'Languages', value: 'EN / PT / JP', sub: 'Fluent · Native · Basic' },
         { label: 'Focus', value: 'Frontend & UI/UX', sub: 'React · Next.js · Figma' },
         { label: 'Freelance', value: 'Web Developer', sub: 'Modern web projects' },
-        { label: 'Business', value: 'Co-Founder at Nerva', sub: 'Web development studio' },
       ]
     },
     workApp: {
@@ -57,12 +55,12 @@ const TRANSLATIONS = {
       process: 'Development Process',
       noSections: 'No sections available for this case study.',
       galleryFallback: 'Designed with close attention to pixel-perfection and modular layout systems, ensuring clean information flows across viewport thresholds.',
-      wipTitle: "Wait! I’m still writing about it.",
-      wipDescription: "I'm currently crafting a detailed write-up for this project. In the meantime, you can explore the live demo or check out the repository on GitHub using the buttons below!",
+      wipTitle: "Wait! I'm still writing about it.",
+      wipDescription: "I'm currently writing about this project. In the meantime, you can explore the website using the button below!",
     },
     contact: {
       title: "Let's Talk!",
-      subtitle: "Have a project in mind, an opportunity, or just want to connect? Feel free to reach out — I’m always open to discussing design, development, and new ideas.",
+      subtitle: "Have a project in mind, an opportunity, or just want to say hi? Feel free to reach out.",
       form: {
         name: 'Name',
         email: 'Email',
@@ -80,8 +78,7 @@ const TRANSLATIONS = {
   pt: {
     apps: {
       about: 'Sobre Mim',
-      work: 'Trabalho',
-      projects: 'Projetos',
+      work: 'Projetos',
       contact: 'Contato',
     },
     controls: {
@@ -110,9 +107,9 @@ const TRANSLATIONS = {
       tags: ['Leme, SP - Brasil', 'EN & PT & JP'],
       bio: [
         "Olá! Sou Alan, Desenvolvedor de Software e Designer UI/UX, apaixonado por criar experiências web intuitivas e visualmente atraentes que equilibram forma e função.",
-        "Atualmente, trabalho como Analista de Integração na Napp Solutions, com foco em integrações de sistemas. Paralelamente ao meu papel profissional, desenvolvo ativamente aplicações web modernas como desenvolvedor freelancer, ajudando empresas a transformar ideias em produtos digitais polidos.",
-        "Também sou um dos fundadores da Nerva, um negócio de desenvolvimento web dedicado a construir experiências web performantes e focadas no usuário, com forte atenção ao design e usabilidade.",
-        "Atualmente no último ano do meu bacharelado em Sistemas de Informação na FHO (Uniararas), estou constantemente explorando novas tecnologias, arquiteturas frontend e abordagens de design de produto. Falo inglês fluente e japonês básico, e estou sempre em busca de oportunidades para crescer como desenvolvedor e designer."
+        "Atualmente, trabalho como Analista de Integração na Napp Solutions, com foco em integrações de sistemas. Anteriormente, atuei como professor, TI de uma multinacional e estagiário de TI na prefeitura da minha cidade. Além do meu trabalho principal, também desenvolvo aplicações web como desenvolvedor freelancer.",
+        "Quando tinha 14 anos, tive a oportunidade de morar por um tempo em Vancouver, Canadá, onde pude conhecer uma cultura diferente e melhorar meu inglês. Ter familiares no Japão também me inspirou a começar a aprender japonês, idioma que venho estudando por conta própria.",
+        "Atualmente no último ano do meu bacharelado em Sistemas de Informação na FHO (Uniararas), estou constantemente explorando novas tecnologias, arquiteturas frontend e abordagens de design. Falo inglês fluente e japonês básico, e estou sempre em busca de oportunidades para crescer como desenvolvedor e designer."
       ],
       highlights: [
         { label: 'Educação', value: 'Bacharel em Sistemas de Inf.', sub: 'FHO · Último ano' },
@@ -120,7 +117,6 @@ const TRANSLATIONS = {
         { label: 'Idiomas', value: 'EN / PT / JP', sub: 'Fluente · Nativo · Básico' },
         { label: 'Foco', value: 'Frontend & UI/UX', sub: 'React · Next.js · Figma' },
         { label: 'Freelance', value: 'Web Developer', sub: 'Projetos web modernos' },
-        { label: 'Negócios', value: 'Co-fundador na Nerva', sub: 'Estúdio de desenvolvimento' },
       ]
     },
     workApp: {
@@ -134,11 +130,11 @@ const TRANSLATIONS = {
       noSections: 'Nenhuma seção disponível para este estudo de caso.',
       galleryFallback: 'Projetado com atenção meticulosa à perfeição de pixels e sistemas de layout modular, garantindo fluxos de informação claros através das resoluções de tela.',
       wipTitle: "Espere! Ainda estou escrevendo sobre isso.",
-      wipDescription: "Estou no processo de escrever um artigo detalhado sobre este projeto. Enquanto isso, você pode explorar a demonstração ao vivo ou conferir o repositório no GitHub usando os botões abaixo!",
+      wipDescription: "Estou escrevendo um artigo detalhado sobre este projeto. Enquanto isso, você pode explorar o site utilizando o botão abaixo!",
     },
     contact: {
       title: 'Vamos Conversar!',
-      subtitle: "Tem um projeto em mente, uma oportunidade ou apenas quer se conectar? Sinta-se à vontade para entrar em contato — estou sempre aberto a discutir design, desenvolvimento e novas ideias.",
+      subtitle: "Tem um projeto em mente, uma oportunidade ou apenas quer trocar uma ideia? Fique à vontade para entrar em contato.",
       form: {
         name: 'Nome',
         email: 'E-mail',

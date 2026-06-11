@@ -5,8 +5,8 @@ import { useDesktopStore, TRANSLATIONS } from '../../store/useDesktopStore'
 import AboutApp from '../apps/AboutApp'
 import WorkApp from '../apps/WorkApp'
 import ContactApp from '../apps/ContactApp'
-import { useRef, useEffect } from 'react'
-import clickSound from '../../assets/click.wav'
+import { useRef, useEffect, useCallback } from 'react'
+import clickSound from '../../assets/click.mp3'
 
 const APP_COMPONENTS = {
   about: AboutApp,
@@ -18,7 +18,7 @@ export default function Window({ win }) {
   const { id, zIndex, isMinimized, position, size } = win
   const language = useDesktopStore(s => s.language)
   const t = TRANSLATIONS[language]
-  
+
   const focusedId = useDesktopStore(s => s.focusedId)
   const isMuted = useDesktopStore(s => s.isMuted)
   const closeApp = useDesktopStore(s => s.closeApp)
@@ -39,6 +39,42 @@ export default function Window({ win }) {
     s.play().catch(() => { })
   }
 
+  const playCloseSound = () => {
+    if (isMuted || !audioRef.current) return
+    const s1 = audioRef.current.cloneNode()
+    s1.volume = 0.2
+    s1.play().catch(() => { })
+    setTimeout(() => {
+      const s2 = audioRef.current.cloneNode()
+      s2.volume = 0.15
+      s2.play().catch(() => { })
+    }, 80)
+  }
+
+  // Track whether a mousedown turned into a drag so we don't play sound on drags
+  const dragStartPos = useRef(null)
+  const didDrag = useRef(false)
+
+  const handleMouseDown = useCallback((e) => {
+    focusApp(id)
+    dragStartPos.current = { x: e.clientX, y: e.clientY }
+    didDrag.current = false
+  }, [focusApp, id])
+
+  const handleMouseMove = useCallback((e) => {
+    if (!dragStartPos.current) return
+    const dx = Math.abs(e.clientX - dragStartPos.current.x)
+    const dy = Math.abs(e.clientY - dragStartPos.current.y)
+    if (dx > 4 || dy > 4) didDrag.current = true
+  }, [])
+
+  const handleMouseUp = useCallback(() => {
+    if (!didDrag.current) playActionSound()
+    dragStartPos.current = null
+    didDrag.current = false
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMuted])
+
   const isFocused = focusedId === id
   const Component = APP_COMPONENTS[id]
 
@@ -55,7 +91,9 @@ export default function Window({ win }) {
           position: pos
         })
       }}
-      onMouseDown={() => { focusApp(id); playActionSound(); }}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
       style={{ zIndex, position: 'absolute' }}
       dragHandleClassName="window-drag-handle"
       minWidth={420}
@@ -102,7 +140,7 @@ export default function Window({ win }) {
               <Minus className="w-4 h-4" />
             </button>
             <button
-              onClick={(e) => { e.stopPropagation(); playActionSound(); closeApp(id); }}
+              onClick={(e) => { e.stopPropagation(); playCloseSound(); closeApp(id); }}
               className="p-2 rounded-xl hover:bg-red-50 dark:hover:bg-red-500/10 text-zinc-400 dark:text-zinc-600 hover:text-red-600 dark:hover:text-red-400 transition-all"
               aria-label={t.windows.close}
             >
